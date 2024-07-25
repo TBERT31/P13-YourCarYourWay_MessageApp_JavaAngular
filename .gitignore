@@ -1,0 +1,80 @@
+## Backend
+HELP.md
+/back/target/
+/back/!.mvn/wrapper/maven-wrapper.jar
+/back/!**/src/main/**/target/
+/back/!**/src/test/**/target/
+
+### STS ###
+/back/.apt_generated
+/back/.classpath
+/back/.factorypath
+/back/.project
+/back/.settings
+/back/.springBeans
+/back/.sts4-cache
+
+### IntelliJ IDEA ###
+/back/.idea
+/back/*.iws
+/back/*.iml
+/back/*.ipr
+
+### NetBeans ###
+/back/nbproject/private/
+/back/nbbuild/
+/back/dist/
+/back/nbdist/
+/back/.nb-gradle/
+/back/build/
+/back/!**/src/main/**/build/
+/back/!**/src/test/**/build/
+
+### VS Code ###
+/back/.vscode/
+
+
+## Frontend
+# See http://help.github.com/ignore-files/ for more about ignoring files.
+
+# Compiled output
+/front/dist
+/front/tmp
+/front/out-tsc
+/front/bazel-out
+
+# Node
+/front/node_modules
+/front/npm-debug.log
+/front/yarn-error.log
+
+# IDEs and editors
+/front/.idea/
+/front/.project
+/front/.classpath
+/front/.c9/
+/front/*.launch
+/front/.settings/
+/front/*.sublime-workspace
+
+# Visual Studio Code
+/front/.vscode/*
+/front/!.vscode/settings.json
+/front/!.vscode/tasks.json
+/front/!.vscode/launch.json
+/front/!.vscode/extensions.json
+/front/.history/*
+
+# Miscellaneous
+/front/.angular/cache
+/front/.sass-cache/
+/front/connect.lock
+/front/coverage
+/front/libpeerconnection.log
+/front/testem.log
+/front/typings
+
+# System files
+/front/.DS_Store
+/front/Thumbs.db
+/front/.env
