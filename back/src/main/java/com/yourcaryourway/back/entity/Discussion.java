@@ -13,6 +13,7 @@ import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import java.time.LocalDateTime;
+import java.util.List;
 import java.util.Set;
 
 @Entity
@@ -35,12 +36,13 @@ public class Discussion {
     @NotBlank(message = "Title is mandatory")
     @Size(max = 255, message = "Title must be between 3 than 255 characters")
     @Column(name = "title")
-    @NotNull
+    @NonNull
     private String title;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "status_name", referencedColumnName = "name", nullable = false)
     @NotNull(message = "Status is mandatory")
+    @NonNull
     private Status status;
 
     @CreatedDate
@@ -54,6 +56,13 @@ public class Discussion {
     private LocalDateTime updatedAt;
 
     @OneToMany(mappedBy = "discussion", cascade = CascadeType.ALL, orphanRemoval = true)
-    @ToString.Exclude 
+    @ToString.Exclude
     private Set<Message> messages;
+
+    @ManyToMany(fetch = FetchType.EAGER)
+    @JoinTable(
+            name = "DISCUSSION_PARTICIPANTS",
+            joinColumns = @JoinColumn( name = "discussion_id" ),
+            inverseJoinColumns = @JoinColumn( name = "user_id" ) )
+    private Set<User> users_participants;
 }

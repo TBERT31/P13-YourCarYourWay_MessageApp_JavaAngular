@@ -12,6 +12,7 @@ import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.List;
 import java.util.Set;
 
 @Entity
@@ -36,12 +37,12 @@ public class User {
     @Size(max = 50, message = "Email must be less than 50 characters")
     @Column(name = "email", unique = true)
     @Email(message = "Email is not compliant")
-    @NotNull
+    @NonNull
     private String email;
 
     @NotBlank(message = "Password is mandatory")
     @Size(min = 8, max = 255, message = "Password must be between 8 and 255 characters")
-    @NotNull
+    @NonNull
     @Pattern(
             regexp = "(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=,?;./:!§£*()-_¨µ<>{}]).{8,}",
             message = "Password must contain at least one digit, one lowercase letter, one uppercase letter, one special character and at least 8 characters"
@@ -52,23 +53,24 @@ public class User {
     @NotBlank(message = "Firstname is mandatory")
     @Size(max = 50, message = "Firstname must be less than 50 characters")
     @Column(name = "firstname")
-    @NotNull
+    @NonNull
     private String firstname;
 
     @NotBlank(message = "Lastname is mandatory")
     @Size(max = 50, message = "Lastname must be less than 50 characters")
     @Column(name = "Lastname")
-    @NotNull
+    @NonNull
     private String lastname;
 
     @NotNull(message = "Birth date is mandatory")
     @Column(name = "birth_date")
+    @NonNull
     private LocalDate birthDate;
 
     @NotBlank(message = "Address is mandatory")
     @Size(max = 255, message = "Address must be less than 255 characters")
     @Column(name = "address")
-    @NotNull
+    @NonNull
     private String address;
 
     @Column(name = "admin")
@@ -87,4 +89,7 @@ public class User {
     @OneToMany(mappedBy = "author", cascade = CascadeType.ALL, orphanRemoval = true)
     @ToString.Exclude
     private Set<Message> messages;
+
+    @ManyToMany(mappedBy = "users_participants", fetch = FetchType.LAZY)
+    private Set<Discussion> discussions_participants;
 }

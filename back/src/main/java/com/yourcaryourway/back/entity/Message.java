@@ -32,6 +32,7 @@ public class Message {
 
     @NotBlank(message = "Content is mandatory")
     @Column(name = "content", columnDefinition = "TEXT")
+    @NonNull
     private String content;
 
     @ManyToOne(fetch = FetchType.LAZY)
