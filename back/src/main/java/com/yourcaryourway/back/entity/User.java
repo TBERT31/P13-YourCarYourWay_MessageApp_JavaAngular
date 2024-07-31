@@ -27,7 +27,6 @@ import java.util.Set;
 @AllArgsConstructor
 @ToString
 public class User {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
@@ -73,7 +72,7 @@ public class User {
     @NonNull
     private String address;
 
-    @Column(name = "admin")
+    @Column(name = "admin", nullable = false, columnDefinition = "TINYINT")
     private boolean admin = false;
 
     @CreatedDate

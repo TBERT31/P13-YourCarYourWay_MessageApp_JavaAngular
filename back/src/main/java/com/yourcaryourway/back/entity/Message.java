@@ -3,6 +3,7 @@ package com.yourcaryourway.back.entity;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Size;
 import lombok.*;
 import lombok.experimental.Accessors;
 import org.hibernate.annotations.CreationTimestamp;
@@ -32,6 +33,7 @@ public class Message {
 
     @NotBlank(message = "Content is mandatory")
     @Column(name = "content", columnDefinition = "TEXT")
+    @Size(max = 2000, message = "Content must be less than 2000 characters")
     @NonNull
     private String content;
 
@@ -46,7 +48,7 @@ public class Message {
     private User author;
 
     @Column(name = "direct", nullable = false, columnDefinition = "TINYINT")
-    private boolean direct = false;
+    private boolean direct = true;
 
     @CreatedDate
     @CreationTimestamp
