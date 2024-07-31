@@ -3,14 +3,13 @@ package com.yourcaryourway.back.dto;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import java.time.LocalDateTime;
 
-@Data
-@NoArgsConstructor
+@Getter
+@Setter
+@Builder
 @AllArgsConstructor
 public class MessageDto {
     private int id;
