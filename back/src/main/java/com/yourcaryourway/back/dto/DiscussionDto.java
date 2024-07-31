@@ -1,7 +1,6 @@
 package com.yourcaryourway.back.dto;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
-import com.yourcaryourway.back.entity.Status;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
 import lombok.*;
