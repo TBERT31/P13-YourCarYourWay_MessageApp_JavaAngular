@@ -10,9 +10,8 @@ import java.util.List;
 @Repository
 public interface DiscussionRepository extends JpaRepository<Discussion, Integer> {
 
-//    @Query("select * from discussions AS d" +
-//            "left join discussion_participants AS dp ON d.id = dp.discussion_id" +
-//            "WHERE dp.user_id = :userId"
-//    )
-//    List<Discussion> findAllByUserId(Integer userId);
+    @Query(value = "SELECT * FROM discussions AS d " +
+            "LEFT JOIN discussion_participants AS dp ON d.id = dp.discussion_id " +
+            "WHERE dp.user_id = :userId", nativeQuery = true)
+    List<Discussion> findAllByUserId(Integer userId);
 }

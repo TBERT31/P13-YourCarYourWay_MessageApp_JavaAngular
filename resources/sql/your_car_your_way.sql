@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : mer. 31 juil. 2024 à 08:57
+-- Généré le : mer. 31 juil. 2024 à 18:03
 -- Version du serveur : 8.0.36
 -- Version de PHP : 8.2.12
 
@@ -82,6 +82,14 @@ CREATE TABLE `discussions` (
   `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Déchargement des données de la table `discussions`
+--
+
+INSERT INTO `discussions` (`id`, `title`, `status_name`, `created_at`, `updated_at`) VALUES
+(1, 'Error with my reservation', 'New', '2024-07-31 15:17:20', '2024-07-31 15:29:57'),
+(2, 'Need to postpone my reservation', 'New', '2024-07-31 15:19:08', '2024-07-31 15:19:08');
+
 -- --------------------------------------------------------
 
 --
@@ -92,6 +100,14 @@ CREATE TABLE `discussion_participants` (
   `discussion_id` int NOT NULL,
   `user_id` int NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Déchargement des données de la table `discussion_participants`
+--
+
+INSERT INTO `discussion_participants` (`discussion_id`, `user_id`) VALUES
+(1, 4),
+(2, 4);
 
 -- --------------------------------------------------------
 
@@ -108,6 +124,13 @@ CREATE TABLE `messages` (
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Déchargement des données de la table `messages`
+--
+
+INSERT INTO `messages` (`id`, `content`, `discussion`, `author`, `direct`, `created_at`, `updated_at`) VALUES
+(1, 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.', 1, 4, 1, '2024-07-31 15:37:08', '2024-07-31 15:37:08');
 
 -- --------------------------------------------------------
 
@@ -176,10 +199,20 @@ CREATE TABLE `users` (
   `lastname` varchar(50) COLLATE utf8mb4_general_ci NOT NULL,
   `birth_date` date NOT NULL,
   `address` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
-  `admin` tinyint NOT NULL DEFAULT '0',
+  `admin` bit(1) DEFAULT NULL,
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Déchargement des données de la table `users`
+--
+
+INSERT INTO `users` (`id`, `email`, `password`, `firstname`, `lastname`, `birth_date`, `address`, `admin`, `created_at`, `updated_at`) VALUES
+(1, 'thomas.berteau@test.com', 'Test!1234', 'thomas', 'berteau', '1995-07-16', '2 rue du Stade, Cuxac d\'Aude 11590', b'1', '2024-07-31 15:05:53', '2024-07-31 15:05:53'),
+(2, 'lea.minniti@test.com', 'Test!1234', 'lea', 'minniti', '1997-06-12', '2 rue du Stade, Cuxac d\'Aude 11590', b'1', '2024-07-31 15:05:53', '2024-07-31 15:05:53'),
+(3, 'kaya.kai@test.com', 'Test!1234', 'kaya', 'kai', '2016-06-27', '2 rue du Stade, Cuxac d\'Aude 11590', b'1', '2024-07-31 15:05:53', '2024-07-31 15:05:53'),
+(4, 'john.doe@test.com', 'Test!1234', 'john', 'doe', '2014-01-01', '10 rue de l\'invention, Paris 70123', b'0', '2024-07-31 15:05:53', '2024-07-31 15:05:53');
 
 -- --------------------------------------------------------
 
@@ -323,13 +356,13 @@ ALTER TABLE `agencies`
 -- AUTO_INCREMENT pour la table `discussions`
 --
 ALTER TABLE `discussions`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT pour la table `messages`
 --
 ALTER TABLE `messages`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT pour la table `offers`
@@ -347,7 +380,7 @@ ALTER TABLE `reviews`
 -- AUTO_INCREMENT pour la table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT pour la table `video_slots`

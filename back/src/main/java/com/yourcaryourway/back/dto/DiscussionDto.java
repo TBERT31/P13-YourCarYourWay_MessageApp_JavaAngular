@@ -19,7 +19,7 @@ public class DiscussionDto {
     @Size(min = 3, max = 255, message = "Title must be between 3 and 255 characters")
     private String title;
 
-    private String status;
+    private String status = "New";
 
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private LocalDateTime createdAt;

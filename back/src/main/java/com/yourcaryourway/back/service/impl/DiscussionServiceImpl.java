@@ -32,7 +32,7 @@ public class DiscussionServiceImpl implements DiscussionService {
 
     @Override
     public List<Discussion> getDiscussionsByUserId(int userId){
-        return discussionRepository.findAllByUsers_participantsIdOrderByCreatedAtDesc(userId);
+        return discussionRepository.findAllByUserId(userId);
     }
 
     @Override

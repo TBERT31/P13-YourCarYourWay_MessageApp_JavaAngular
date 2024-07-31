@@ -5,6 +5,7 @@ import com.yourcaryourway.back.entity.Discussion;
 import com.yourcaryourway.back.exception.NotFoundException;
 import com.yourcaryourway.back.mapper.DiscussionMapper;
 import com.yourcaryourway.back.service.DiscussionService;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -17,6 +18,7 @@ import java.util.List;
 @RequestMapping("/api/discussions")
 @RequiredArgsConstructor
 @CrossOrigin(origins = "http://localhost:4200", maxAge = 3600)
+@Tag(name = "Discussions")
 public class DiscussionController {
 
     private final DiscussionService discussionService;
@@ -36,13 +38,13 @@ public class DiscussionController {
         return ResponseEntity.ok(discussionMapper.toDtoList(discussions));
     }
 
-//    @GetMapping("/user/{userId}")
-//    public ResponseEntity<List<DiscussionDto>> getDiscussionsByUserId(
-//            @PathVariable Integer userId
-//    ){
-//        List<Discussion> discussions = discussionService.getDiscussionsByUserId(userId);
-//        return ResponseEntity.ok(discussionMapper.toDtoList(discussions));
-//    }
+    @GetMapping("/user/{userId}")
+    public ResponseEntity<List<DiscussionDto>> getDiscussionsByUserId(
+            @PathVariable Integer userId
+    ){
+        List<Discussion> discussions = discussionService.getDiscussionsByUserId(userId);
+        return ResponseEntity.ok(discussionMapper.toDtoList(discussions));
+    }
 
     @GetMapping("/{discussionId}")
     public ResponseEntity<DiscussionDto> getDiscussionById(

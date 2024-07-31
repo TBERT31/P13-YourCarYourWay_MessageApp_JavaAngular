@@ -5,6 +5,7 @@ import com.yourcaryourway.back.entity.Message;
 import com.yourcaryourway.back.exception.NotFoundException;
 import com.yourcaryourway.back.mapper.MessageMapper;
 import com.yourcaryourway.back.service.MessageService;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -16,6 +17,7 @@ import java.util.List;
 @RequestMapping("/api/messages")
 @RequiredArgsConstructor
 @CrossOrigin(origins = "http://localhost:4200", maxAge = 3600)
+@Tag(name = "Messages")
 public class MessageController {
 
     private final MessageService messageService;
@@ -63,7 +65,7 @@ public class MessageController {
         }
     }
 
-    @GetMapping("/discussion/{userId}")
+    @GetMapping("/user/{userId}")
     public ResponseEntity<List<MessageDto>> getMessagesByUserId(
             @PathVariable Integer userId
     ){

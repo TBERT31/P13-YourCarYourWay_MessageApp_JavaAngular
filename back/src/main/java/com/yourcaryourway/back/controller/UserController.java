@@ -4,6 +4,7 @@ import com.yourcaryourway.back.dto.UserDto;
 import com.yourcaryourway.back.entity.User;
 import com.yourcaryourway.back.mapper.UserMapper;
 import com.yourcaryourway.back.service.UserService;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -12,6 +13,7 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/api/users")
 @RequiredArgsConstructor
 @CrossOrigin(origins = "http://localhost:4200", maxAge = 3600)
+@Tag(name = "Users")
 public class UserController {
 
     private final UserService userService;
