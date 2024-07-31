@@ -2,10 +2,12 @@ package com.yourcaryourway.back.service.impl;
 
 import com.yourcaryourway.back.entity.Discussion;
 import com.yourcaryourway.back.entity.Status;
+import com.yourcaryourway.back.exception.NotFoundException;
 import com.yourcaryourway.back.repository.DiscussionRepository;
 import com.yourcaryourway.back.repository.StatusRepository;
 import com.yourcaryourway.back.service.DiscussionService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -25,22 +27,27 @@ public class DiscussionServiceImpl implements DiscussionService {
 
     @Override
     public List<Discussion> getAllDiscussions(){
-        return discussionRepository.findAll();
-    };
+        return discussionRepository.findAll(Sort.by(Sort.Direction.DESC, "createdAt"));
+    }
+
+    @Override
+    public List<Discussion> getDiscussionsByUserId(int userId){
+        return discussionRepository.findAllByUsers_participantsIdOrderByCreatedAtDesc(userId);
+    }
 
     @Override
     public Discussion getDiscussionById(int discussionId){
         return discussionRepository.findById(discussionId)
-                .orElse(null);
+                .orElseThrow(() -> new NotFoundException("Discussion with ID " + discussionId + " not found"));
     }
 
     @Override
     public Discussion updateDiscussionStatusById(String statusName, int discussionId){
         Discussion discussionUpdated = discussionRepository.findById(discussionId)
-                .orElse(null);
+                .orElseThrow(() -> new NotFoundException("Discussion with ID " + discussionId + " not found"));
 
         Status newStatus = statusRepository.findByName(statusName)
-                .orElse(null);
+                .orElseThrow(() -> new NotFoundException("Status '" + statusName + "' not found"));
 
         if(discussionUpdated != null){
             discussionUpdated.setStatus(newStatus);

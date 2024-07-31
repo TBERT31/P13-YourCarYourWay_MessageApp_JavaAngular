@@ -1,6 +1,7 @@
 package com.yourcaryourway.back.service.impl;
 
 import com.yourcaryourway.back.entity.Message;
+import com.yourcaryourway.back.exception.NotFoundException;
 import com.yourcaryourway.back.repository.MessageRepository;
 import com.yourcaryourway.back.service.MessageService;
 import lombok.RequiredArgsConstructor;
@@ -22,16 +23,16 @@ public class MessageServiceImpl implements MessageService {
     @Override
     public Message getMessageById(int messageId){
         return messageRepository.findById(messageId)
-                .orElse(null);
+                .orElseThrow(() -> new NotFoundException("Message with ID " + messageId + " not found"));
     }
 
     @Override
     public List<Message> getMessagesByDiscussionId(int discussionId){
-        return  messageRepository.findByDiscussionIdOrderByCreatedAtAsc(discussionId);
+        return  messageRepository.findAllByDiscussionIdOrderByCreatedAtDesc(discussionId);
     }
 
     @Override
     public List<Message> getMessagesByUserId(int userId){
-        return  messageRepository.findByAuthorIdOrderByCreatedAtAsc(userId);
+        return  messageRepository.findAllByAuthorIdOrderByCreatedAtDesc(userId);
     }
 }

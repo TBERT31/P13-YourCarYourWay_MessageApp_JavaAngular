@@ -10,6 +10,7 @@ import com.yourcaryourway.back.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.stream.Collectors;
 
 @Service
@@ -20,7 +21,7 @@ public class DiscussionMapper {
     private final MessageRepository messageRepository;
     private final StatusRepository statusRepository;
 
-    public DiscussionDto fromEntity(Discussion discussion){
+    public DiscussionDto toDto(Discussion discussion){
         return DiscussionDto.builder()
                 .id(discussion.getId())
                 .title(discussion.getTitle())
@@ -61,5 +62,17 @@ public class DiscussionMapper {
                             .collect(Collectors.toSet())
                 )
                 .build();
+    }
+
+    public List<DiscussionDto> toDtoList(List<Discussion> discussions) {
+        return discussions.stream()
+                .map(this::toDto) // Utilisation de la méthode toDto pour chaque élément
+                .collect(Collectors.toList());
+    }
+
+    public List<Discussion> toEntityList(List<DiscussionDto> discussionDtos) {
+        return discussionDtos.stream()
+                .map(this::toEntity) // Utilisation de la méthode toEntity pour chaque élément
+                .collect(Collectors.toList());
     }
 }

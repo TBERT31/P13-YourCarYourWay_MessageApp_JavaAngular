@@ -1,6 +1,7 @@
 package com.yourcaryourway.back.service.impl;
 
 import com.yourcaryourway.back.entity.User;
+import com.yourcaryourway.back.exception.NotFoundException;
 import com.yourcaryourway.back.repository.UserRepository;
 import com.yourcaryourway.back.service.UserService;
 import lombok.RequiredArgsConstructor;
@@ -15,7 +16,7 @@ public class UserServiceImpl implements UserService {
     @Override
     public User getUserById(int userId){
         return userRepository.findById(userId)
-                .orElse(null);
+                .orElseThrow(() -> new NotFoundException("User with ID " + userId + " not found"));
     }
 
     @Override
