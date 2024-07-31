@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : jeu. 25 juil. 2024 à 12:28
+-- Généré le : mer. 31 juil. 2024 à 08:57
 -- Version du serveur : 8.0.36
 -- Version de PHP : 8.2.12
 
@@ -77,7 +77,7 @@ INSERT INTO `categories` (`code`, `description`) VALUES
 CREATE TABLE `discussions` (
   `id` int NOT NULL,
   `title` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
-  `status` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
+  `status_name` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -142,6 +142,25 @@ CREATE TABLE `reviews` (
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `status`
+--
+
+CREATE TABLE `status` (
+  `name` varchar(50) COLLATE utf8mb4_general_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Déchargement des données de la table `status`
+--
+
+INSERT INTO `status` (`name`) VALUES
+('Closed'),
+('In Progress'),
+('New');
 
 -- --------------------------------------------------------
 
@@ -221,7 +240,8 @@ ALTER TABLE `categories`
 -- Index pour la table `discussions`
 --
 ALTER TABLE `discussions`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `fk_status_name` (`status_name`);
 
 --
 -- Index pour la table `discussion_participants`
@@ -254,6 +274,12 @@ ALTER TABLE `reviews`
   ADD PRIMARY KEY (`id`),
   ADD KEY `fk_reviews_user_id` (`user_id`),
   ADD KEY `fk_reviews_agency_id` (`agency_id`);
+
+--
+-- Index pour la table `status`
+--
+ALTER TABLE `status`
+  ADD PRIMARY KEY (`name`);
 
 --
 -- Index pour la table `users`
@@ -332,6 +358,12 @@ ALTER TABLE `video_slots`
 --
 -- Contraintes pour les tables déchargées
 --
+
+--
+-- Contraintes pour la table `discussions`
+--
+ALTER TABLE `discussions`
+  ADD CONSTRAINT `fk_status_name` FOREIGN KEY (`status_name`) REFERENCES `status` (`name`);
 
 --
 -- Contraintes pour la table `discussion_participants`
