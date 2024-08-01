@@ -1,17 +1,16 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { NotFoundComponent } from './modules/core/components/not-found/not-found.component';
-import { AuthGuard } from './guards/auth.guard';
-import { UnauthGuard } from './guards/unauth.guard';
-import { HomeComponent } from './modules/core/components/home/home.component';
-import { RegisterComponent } from './modules/auth/components/register/register.component';
-import { LoginComponent } from './modules/auth/components/login/login.component';
+import { HomeComponent } from './pages/home/home.component';
+import { NotFoundComponent } from './components/not-found/not-found.component';
+import { RegisterComponent } from './pages/register/register.component';
+import { LoginComponent } from './pages/login/login.component';
 
 const routes: Routes = [
-  { path: '', component: HomeComponent },          
-  { path: 'register', component: RegisterComponent }, 
-  { path: 'login', component: LoginComponent },       
-  { path: '**', redirectTo: '' }                     
+  {title: "Homepage" , path: "", component: HomeComponent},
+  {title: "Register" , path: "register", component: RegisterComponent},
+  {title: "Login" , path: "login", component: LoginComponent},
+  {title: "404 Error" , path: '404', component: NotFoundComponent },
+  { path: '**', redirectTo: '404' }
 ];
 
 @NgModule({

@@ -1,0 +1,65 @@
+.homepage{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+
+    &_banner{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+
+        &_img{
+            width: 80%;
+            height: 80%;
+        }
+
+    }
+
+    &_container{
+        margin-top: 10px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 30%;
+    }
+
+    &_button{
+        cursor: pointer;
+        border: 1px solid #fff;
+        border-radius: 15px;
+        padding: 0.5rem;
+        min-width: 80px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+
+        &_login{
+            background-color: #FF3B00;
+            color: #fff;
+            transition: transform 0.3s ease-in-out;
+
+            &:hover{
+                background-color: #225EC4;
+                transform: scale(1.05);
+            }
+        }
+
+        &_register{
+            background-color: #225EC4;
+            color: #fff;
+            transition: transform 0.3s ease-in-out;
+
+            &:hover{
+                background-color: #FF3B00;
+                transform: scale(1.05);
+            }
+        }
+    }
+
+
+
+}

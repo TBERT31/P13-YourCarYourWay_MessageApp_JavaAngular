@@ -1,0 +1,29 @@
+<div class="login">
+    <div class="section-title">
+        <div class="">
+            <h1 class="title">Sign In</h1>
+        </div>
+    </div>
+    <form class="login-form" [formGroup]="form" (ngSubmit)="submit()">
+        <div class="field-group">
+            <label class="field-group-label" for="emailOrUsername">Email</label>
+            <mat-form-field class="field-group-input" appearance="outline">
+                <input matInput id="emailOrUsername" type="text" formControlName="emailOrUsername">
+            </mat-form-field>
+            <mat-error *ngIf="form.get('emailOrUsername')?.invalid && form.get('emailOrUsername')?.touched">
+                Invalid Email
+            </mat-error>
+        </div>
+        <div class="field-group">
+            <label class="field-group-label" for="password">Password</label>
+            <mat-form-field class="field-group-input"  appearance="outline">
+                <input matInput id="password" type="password" formControlName="password">
+            </mat-form-field>
+            <mat-error *ngIf="form.get('password')?.invalid && form.get('password')?.touched">
+                Invalid Password
+            </mat-error>
+        </div>
+        <button class="submit-button" mat-raised-button color="primary" type="submit" [disabled]="form.invalid">Login</button>
+        <p *ngIf="onError" class="error">An error occured</p>
+    </form>
+</div>
