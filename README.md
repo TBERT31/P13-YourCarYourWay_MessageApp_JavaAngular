@@ -4,7 +4,7 @@
 [![forthebadge](https://forthebadge.com/images/badges/made-with-java.svg)](https://forthebadge.com)
 [![forthebadge](https://forthebadge.com/images/badges/built-with-love.svg)](https://forthebadge.com)
 
-# PROJECT - MONDE DE DEV (MDD)
+# PROJECT - YOUR CAR YOUR WAY (YCYW)
 
 ## Start the frontend
 
