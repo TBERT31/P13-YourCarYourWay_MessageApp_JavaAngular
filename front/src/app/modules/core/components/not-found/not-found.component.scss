@@ -1,0 +1,14 @@
+.center {
+    margin-top: 5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    a{
+        cursor: pointer;
+        color: rgb(103, 58, 183);
+        font-weight: bold;
+    }
+}
+  

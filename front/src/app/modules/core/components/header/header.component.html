@@ -1,0 +1,28 @@
+<header class="header">
+    <mat-toolbar class="toolbar">
+        <a href=""><img class="toolbar_img" src="./assets/yourcaryourway_logo.png" alt="logo Your Car Your Way"></a>
+        <ul class="toolbar_ul">
+            <li class="toolbar_ul_li">
+                <a class="toolbar_ul_li_a" routerLink="" 
+                routerLinkActive="active"  
+                [routerLinkActiveOptions]="{ exact: true }">
+                    Accueil
+                </a>
+            </li>
+            <li class="toolbar_ul_li">
+                <a class="toolbar_ul_li_a" routerLink="register"
+                routerLinkActive="active"  
+                [routerLinkActiveOptions]="{ exact: true }">
+                    Inscription
+                </a>
+            </li>
+            <li class="toolbar_ul_li">
+                <a class="toolbar_ul_li_a" routerLink="login"
+                routerLinkActive="active"  
+                [routerLinkActiveOptions]="{ exact: true }">
+                    Connexion
+                </a>
+            </li>
+       </ul>
+    </mat-toolbar>
+</header>

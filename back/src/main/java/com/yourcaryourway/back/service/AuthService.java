@@ -5,6 +5,6 @@ import com.yourcaryourway.back.entity.User;
 import com.yourcaryourway.back.payload.request.LoginRequest;
 
 public interface AuthService {
-    User signup(UserDto userDto);
-    User authenticate(LoginRequest loginRequest);
+    User register(UserDto userDto);
+    User login(LoginRequest loginRequest);
 }

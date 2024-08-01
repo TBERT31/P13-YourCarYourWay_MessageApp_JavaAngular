@@ -25,7 +25,7 @@ public class AuthServiceImpl implements AuthService {
 
     private final AuthenticationManager authenticationManager;
 
-    public User signup(UserDto userDto) {
+    public User register(UserDto userDto) {
         User user = new User()
                 .setEmail(userDto.getEmail())
                 .setFirstname(userDto.getFirstname())
@@ -39,7 +39,7 @@ public class AuthServiceImpl implements AuthService {
         return userRepository.save(user);
     }
 
-    public User authenticate(LoginRequest loginRequest) {
+    public User login(LoginRequest loginRequest) {
         authenticationManager.authenticate(
                 new UsernamePasswordAuthenticationToken(
                         loginRequest.getEmail(),
