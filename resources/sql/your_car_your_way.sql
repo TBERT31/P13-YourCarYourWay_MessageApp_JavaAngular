@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : mer. 31 juil. 2024 à 18:03
+-- Généré le : jeu. 01 août 2024 à 12:11
 -- Version du serveur : 8.0.36
 -- Version de PHP : 8.2.12
 
@@ -209,10 +209,11 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `email`, `password`, `firstname`, `lastname`, `birth_date`, `address`, `admin`, `created_at`, `updated_at`) VALUES
-(1, 'thomas.berteau@test.com', 'Test!1234', 'thomas', 'berteau', '1995-07-16', '2 rue du Stade, Cuxac d\'Aude 11590', b'1', '2024-07-31 15:05:53', '2024-07-31 15:05:53'),
-(2, 'lea.minniti@test.com', 'Test!1234', 'lea', 'minniti', '1997-06-12', '2 rue du Stade, Cuxac d\'Aude 11590', b'1', '2024-07-31 15:05:53', '2024-07-31 15:05:53'),
-(3, 'kaya.kai@test.com', 'Test!1234', 'kaya', 'kai', '2016-06-27', '2 rue du Stade, Cuxac d\'Aude 11590', b'1', '2024-07-31 15:05:53', '2024-07-31 15:05:53'),
-(4, 'john.doe@test.com', 'Test!1234', 'john', 'doe', '2014-01-01', '10 rue de l\'invention, Paris 70123', b'0', '2024-07-31 15:05:53', '2024-07-31 15:05:53');
+(1, 'thomas.berteau@test.com', '$2a$10$jMDf1OsiCVeyMf6PEywhu.kE/4cZhwGRJW891byr.Y/B0PI5xEAOW', 'thomas', 'berteau', '1995-07-16', '2 rue du Stade, Cuxac d\'Aude 11590', b'1', '2024-07-31 15:05:53', '2024-07-31 15:05:53'),
+(2, 'lea.minniti@test.com', '$2a$10$jMDf1OsiCVeyMf6PEywhu.kE/4cZhwGRJW891byr.Y/B0PI5xEAOW', 'lea', 'minniti', '1997-06-12', '2 rue du Stade, Cuxac d\'Aude 11590', b'1', '2024-07-31 15:05:53', '2024-07-31 15:05:53'),
+(3, 'kaya.kai@test.com', '$2a$10$jMDf1OsiCVeyMf6PEywhu.kE/4cZhwGRJW891byr.Y/B0PI5xEAOW', 'kaya', 'kai', '2016-06-27', '2 rue du Stade, Cuxac d\'Aude 11590', b'1', '2024-07-31 15:05:53', '2024-07-31 15:05:53'),
+(4, 'john.doe@test.com', '$2a$10$jMDf1OsiCVeyMf6PEywhu.kE/4cZhwGRJW891byr.Y/B0PI5xEAOW', 'john', 'doe', '2014-01-01', '10 rue de l\'invention, Paris 70123', b'0', '2024-07-31 15:05:53', '2024-07-31 15:05:53'),
+(5, 'jane.doe@test.com', '$2a$10$jMDf1OsiCVeyMf6PEywhu.kE/4cZhwGRJW891byr.Y/B0PI5xEAOW', 'Jane', 'Doe', '1990-01-01', '56 rue Ernest Renan, Île-de-France 94600', b'0', '2024-07-31 19:07:59', '2024-07-31 19:07:59');
 
 -- --------------------------------------------------------
 
@@ -380,7 +381,7 @@ ALTER TABLE `reviews`
 -- AUTO_INCREMENT pour la table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT pour la table `video_slots`

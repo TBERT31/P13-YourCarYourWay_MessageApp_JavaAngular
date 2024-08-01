@@ -39,7 +39,8 @@ public class SecurityConfig {
                                 "/swagger-resources",
                                 "/swagger-resources/**",
                                 "/swagger-ui/**",
-                                "/swagger-ui.html").permitAll()
+                                "/swagger-ui.html"
+                        ).permitAll()
                         .anyRequest().authenticated()
                 )
                 .exceptionHandling(exception -> exception
