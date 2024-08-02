@@ -4,6 +4,10 @@
     justify-content: center;
     align-items: center;
 
+    .section-title{
+        margin-top: 5px;
+    }
+
     &-form{
         display: flex;
         justify-content: center;
@@ -13,11 +17,39 @@
 
         .field-group{
             width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+                &-mat-100{
+                    margin: 5px 0;
+                    width: 100%;
+                }
     
-            input{
-                width: 100%;
-            }
+                &-mat-50{
+                    margin: 5px 0;
+                    width: 48%;
+                }
+            
+    
+
         }
     }
 }
 
+.error{
+    color: red;
+    font-size: 0.8rem;
+    margin-top: 0.5rem;
+}
+
+.field-group-input {
+    &.invalid .mat-form-field-outline {
+        border-color: red;
+    }
+}
+
+.mat-error {
+    font-size: 0.75rem;
+    color: red;
+}

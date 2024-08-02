@@ -6,24 +6,35 @@
     </div>
     <form class="login-form" [formGroup]="form" (ngSubmit)="submit()">
         <div class="field-group">
-            <label class="field-group-label" for="emailOrUsername">Email</label>
-            <mat-form-field class="field-group-input" appearance="outline">
-                <input matInput id="emailOrUsername" type="text" formControlName="emailOrUsername">
+            <mat-form-field class="field-group-mat-100" appearance="outline">
+                <mat-label class="field-group-label" for="email">Email</mat-label>
+                <input class="field-group-input" matInput id="email" type="email" formControlName="email">
+                <mat-error *ngIf="form.get('email')?.invalid && form.get('email')?.touched">
+                    Invalid email
+                </mat-error>
             </mat-form-field>
-            <mat-error *ngIf="form.get('emailOrUsername')?.invalid && form.get('emailOrUsername')?.touched">
-                Invalid Email
-            </mat-error>
         </div>
         <div class="field-group">
-            <label class="field-group-label" for="password">Password</label>
-            <mat-form-field class="field-group-input"  appearance="outline">
-                <input matInput id="password" type="password" formControlName="password">
+            <mat-form-field class="field-group-mat-100"  appearance="outline">
+                <mat-label class="field-group-label" for="password">Password</mat-label>
+                <input class="field-group-input" matInput id="password" [type]="hide() ? 'password' : 'text'" formControlName="password">
+                <button
+                  mat-icon-button
+                  matSuffix
+                  (click)="clickEvent($event)"
+                  [attr.aria-label]="'Hide password'"
+                  [attr.aria-pressed]="hide()"
+                >
+                    <mat-icon>{{hide() ? 'visibility_off' : 'visibility'}}</mat-icon>
+                </button>
+                <mat-error *ngIf="form.get('password')?.invalid && form.get('password')?.touched">
+                    Invalid password
+                </mat-error>
             </mat-form-field>
-            <mat-error *ngIf="form.get('password')?.invalid && form.get('password')?.touched">
-                Invalid Password
-            </mat-error>
         </div>
-        <button class="submit-button" mat-raised-button color="primary" type="submit" [disabled]="form.invalid">Login</button>
+        <div class="btn-group">
+            <button class="submit-button" mat-raised-button color="primary" type="submit" [disabled]="form.invalid">Login</button>
+        </div>
         <p *ngIf="onError" class="error">An error occured</p>
     </form>
 </div>

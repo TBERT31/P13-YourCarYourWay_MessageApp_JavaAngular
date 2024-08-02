@@ -1,4 +1,4 @@
-import { Component, OnDestroy } from '@angular/core';
+import { Component, OnDestroy, signal } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Subject, takeUntil } from 'rxjs';
@@ -20,7 +20,7 @@ export class LoginComponent implements OnDestroy {
   private readonly passwordPattern = /^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=,?;./:!§£*()-_¨µ<>{}]).{8,}$/;
 
   public form = this.fb.group({
-    emailOrUsername: [
+    email: [
       '',
       [
         Validators.required,
@@ -33,7 +33,7 @@ export class LoginComponent implements OnDestroy {
       [
         Validators.required,
         Validators.minLength(8),
-        Validators.maxLength(120),
+        Validators.maxLength(255),
         Validators.pattern(this.passwordPattern) 
       ]
     ]
@@ -54,7 +54,7 @@ export class LoginComponent implements OnDestroy {
     ).subscribe({
       next: (response: Session) => {
         this.sessionService.logIn(response);
-        this.router.navigate(['/articles']);
+        this.router.navigate(['/']);
       },
       error: error => this.onError = true, 
     });
@@ -64,5 +64,11 @@ export class LoginComponent implements OnDestroy {
   ngOnDestroy(): void {
     this.destroy$.next(); 
     this.destroy$.complete(); 
+  }
+
+  hide = signal(true);
+  clickEvent(event: MouseEvent) {
+    this.hide.set(!this.hide());
+    event.stopPropagation();
   }
 }

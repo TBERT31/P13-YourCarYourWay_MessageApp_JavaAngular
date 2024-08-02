@@ -1,5 +1,5 @@
-import { Component, OnDestroy } from '@angular/core';
-import { FormBuilder, Validators } from '@angular/forms';
+import { Component, OnDestroy, signal } from '@angular/core';
+import { AbstractControl, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Subject, takeUntil } from 'rxjs';
 import { User } from 'src/app/core/interfaces/user.interface';
@@ -15,6 +15,14 @@ export class RegisterComponent implements OnDestroy {
   private destroy$ = new Subject<void>();
 
   private readonly passwordPattern = /^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=,?;./:!§£*()-_¨µ<>{}]).{8,}$/;
+  private readonly namePattern = /^[A-Za-zÀ-ÖØ-öø-ÿ\s'-]{3,50}$/; 
+  private readonly streetNumberPattern = /^[0-9A-Za-z\s-]{1,10}$/; 
+  private readonly streetNamePattern = /^[A-Za-zÀ-ÖØ-öø-ÿ0-9\s',-]{3,100}$/; 
+  private readonly cityPattern = /^[A-Za-zÀ-ÖØ-öø-ÿ\s'-]{2,50}$/;
+  private readonly zipcodePattern = /^[0-9A-Za-z\s-]{4,10}$/;
+  private readonly countryPattern = /^[A-Za-zÀ-ÖØ-öø-ÿ\s'-]{2,50}$/; 
+
+
 
   public form = this.fb.group({
     email: [
@@ -40,7 +48,8 @@ export class RegisterComponent implements OnDestroy {
       [
         Validators.required,
         Validators.minLength(3),
-        Validators.maxLength(50)
+        Validators.maxLength(50),
+        Validators.pattern(this.namePattern)
       ]
     ],
     lastname: [
@@ -48,43 +57,59 @@ export class RegisterComponent implements OnDestroy {
       [
         Validators.required,
         Validators.minLength(3),
-        Validators.maxLength(50)
+        Validators.maxLength(50),
+        Validators.pattern(this.namePattern)
       ]
     ],
     streetNumber: [
       '',
       [
         Validators.required,
+        Validators.pattern(this.streetNumberPattern),
+        Validators.maxLength(10)
       ]
     ],
     streetName: [
       '',
       [
         Validators.required,
+        Validators.minLength(3),
+        Validators.maxLength(100),
+        Validators.pattern(this.streetNamePattern)
       ]
     ],
     city: [
       '',
       [
         Validators.required,
+        Validators.minLength(2),
+        Validators.maxLength(50),
+        Validators.pattern(this.cityPattern)
       ]
     ],
     zipcode: [
       '',
       [
         Validators.required,
+        Validators.pattern(this.zipcodePattern),
+        Validators.minLength(4),
+        Validators.maxLength(10)
       ]
     ],
     country: [
       '',
       [
         Validators.required,
+        Validators.minLength(2),
+        Validators.maxLength(50),
+        Validators.pattern(this.countryPattern)
       ]
     ],
     birthDate: [
       '',
       [
-        Validators.required
+        Validators.required,
+        this.pastDateValidator()
       ]
     ],
   });
@@ -121,5 +146,20 @@ export class RegisterComponent implements OnDestroy {
   ngOnDestroy(): void {
     this.destroy$.next(); 
     this.destroy$.complete(); 
+  }
+
+  private pastDateValidator() {
+    return (control: AbstractControl) => {
+      const today = new Date();
+      const birthDate = new Date(control.value);
+
+      return birthDate < today ? null : { futureDate: true }; 
+    };
+  }
+
+  hide = signal(true);
+  clickEvent(event: MouseEvent) {
+    this.hide.set(!this.hide());
+    event.stopPropagation();
   }
 }
