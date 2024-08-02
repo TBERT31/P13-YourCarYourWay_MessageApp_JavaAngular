@@ -4,6 +4,7 @@ import com.yourcaryourway.back.dto.DiscussionDto;
 import com.yourcaryourway.back.entity.Discussion;
 import com.yourcaryourway.back.entity.Message;
 import com.yourcaryourway.back.entity.User;
+import com.yourcaryourway.back.repository.DiscussionRepository;
 import com.yourcaryourway.back.repository.MessageRepository;
 import com.yourcaryourway.back.repository.StatusRepository;
 import com.yourcaryourway.back.repository.UserRepository;
@@ -20,12 +21,14 @@ public class DiscussionMapper {
     private final UserRepository userRepository;
     private final MessageRepository messageRepository;
     private final StatusRepository statusRepository;
+    private final DiscussionRepository discussionRepository;
 
     public DiscussionDto toDto(Discussion discussion){
         return DiscussionDto.builder()
                 .id(discussion.getId())
                 .title(discussion.getTitle())
                 .status(discussion.getStatus().getName())
+                .author(discussionRepository.findFirstParticipantNameById(discussion.getId()))
                 .createdAt(discussion.getCreatedAt())
                 .updatedAt(discussion.getUpdatedAt())
                 .messageIds(

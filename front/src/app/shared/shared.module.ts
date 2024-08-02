@@ -2,11 +2,12 @@ import { NgModule } from '@angular/core';
 import { MaterialModule } from './material.module';
 import { ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
+import { TruncatePipe } from './pipe/truncate.pipe';
 
 
 @NgModule({
   declarations: [
-
+    TruncatePipe,
   ],
   imports: [
     ReactiveFormsModule,
@@ -14,6 +15,7 @@ import { RouterModule } from '@angular/router';
     MaterialModule,
   ],
   exports: [
+    TruncatePipe,
     ReactiveFormsModule,
     MaterialModule, 
   ]

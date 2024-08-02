@@ -21,6 +21,8 @@ public class DiscussionDto {
 
     private String status = "New";
 
+    private String author;
+
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private LocalDateTime createdAt;
 

@@ -1,0 +1,39 @@
+.discussions{
+
+    &-header-image {
+        background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+        background-size: cover;
+    }
+
+    &-card{
+        cursor: pointer;
+
+        &-header{
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+
+    .status-pill {
+        padding: 0.25em 0.5em;
+        border-radius: 15px;
+        color: white;
+        font-weight: bold;
+        font-size: 0.75em;
+        text-transform: uppercase;
+        display: inline-block;
+      }
+    
+      .status-new {
+        background-color: green;
+      }
+    
+      .status-in-progress {
+        background-color: orange;
+      }
+    
+      .status-closed {
+        background-color: red;
+      }
+}
+

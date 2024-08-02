@@ -25,6 +25,7 @@ public class AuthServiceImpl implements AuthService {
 
     private final AuthenticationManager authenticationManager;
 
+    @Override
     public User register(UserDto userDto) {
         User user = new User()
                 .setEmail(userDto.getEmail())
@@ -40,6 +41,7 @@ public class AuthServiceImpl implements AuthService {
         return userRepository.save(user);
     }
 
+    @Override
     public User login(LoginRequest loginRequest) {
         authenticationManager.authenticate(
                 new UsernamePasswordAuthenticationToken(
