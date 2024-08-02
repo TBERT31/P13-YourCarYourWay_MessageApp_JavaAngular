@@ -4,7 +4,7 @@ export interface User {
     password: string;
     firstname: string;
     lastname: string;
-    birthDate: Date;
+    birthDate: string;
     address: string;
     admin?: boolean;
     createdAt?: Date;

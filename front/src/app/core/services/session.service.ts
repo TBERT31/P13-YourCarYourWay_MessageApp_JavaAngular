@@ -10,7 +10,7 @@ export class SessionService {
   private readonly SESSION_STORAGE_KEY = 'userSession';
   private isLoggedSubject = new BehaviorSubject<boolean>(this.isLoggedIn());
   public session: Session | undefined;
-  private jwtHelper: JwtHelperService = new JwtHelperService(); // Initialiser JwtHelperService
+  private jwtHelper: JwtHelperService = new JwtHelperService(); 
 
   constructor() {
     this.loadSession();

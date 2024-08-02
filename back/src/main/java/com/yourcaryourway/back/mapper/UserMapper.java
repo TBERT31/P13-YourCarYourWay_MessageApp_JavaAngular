@@ -23,7 +23,6 @@ public class UserMapper {
                 .email(user.getEmail())
                 .firstname(user.getFirstname())
                 .lastname(user.getLastname())
-                .password(user.getPassword())
                 .address(user.getAddress())
                 .birthDate(user.getBirthDate())
                 .createdAt(user.getCreatedAt())

@@ -130,7 +130,7 @@ export class RegisterComponent implements OnDestroy {
             firstname: formValue.firstname ?? '',
             lastname: formValue.lastname ?? '',
             address: `${formValue.streetNumber} ${formValue.streetName} - ${formValue.city} ${formValue.zipcode}, ${formValue.country}`  ?? '',
-            birthDate: formValue.birthDate ? new Date(formValue.birthDate) : new Date(), 
+            birthDate: formValue.birthDate ? new Date(formValue.birthDate).toISOString().substring(0, 10) : '',
             admin: false, 
         };
 

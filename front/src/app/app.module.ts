@@ -5,12 +5,13 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClient, HttpClientModule } from '@angular/common/http';
 import { SharedModule } from './shared/shared.module';
 import { HeaderComponent } from './components/header/header.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { RegisterComponent } from './pages/register/register.component';
 import { LoginComponent } from './pages/login/login.component';
+import { JwtInterceptor } from './core/interceptor/jwt.interceptor';
 
 
 @NgModule({
@@ -30,7 +31,8 @@ import { LoginComponent } from './pages/login/login.component';
     SharedModule,
   ],
   providers: [
-
+    { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true},
+    HttpClient,
   ],
   bootstrap: [AppComponent]
 })

@@ -36,6 +36,7 @@ public class AuthServiceImpl implements AuthService {
                 .setAdmin(false)
                 .setMessages(Collections.emptySet())
                 .setDiscussions_participants(Collections.emptySet());
+
         return userRepository.save(user);
     }
 
