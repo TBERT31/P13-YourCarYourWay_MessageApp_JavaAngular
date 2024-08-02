@@ -10,9 +10,10 @@ export class SessionService {
   private readonly SESSION_STORAGE_KEY = 'userSession';
   private isLoggedSubject = new BehaviorSubject<boolean>(this.isLoggedIn());
   public session: Session | undefined;
-  private jwtHelper: JwtHelperService = new JwtHelperService(); 
+  private jwtHelper: JwtHelperService;
 
   constructor() {
+    this.jwtHelper = new JwtHelperService();  // Assurez-vous que c'est bien initialisé ici
     this.loadSession();
   }
 
@@ -77,7 +78,11 @@ export class SessionService {
 
   public isLoggedIn(): boolean {
     const token = this.getToken();
-    return !!token && !this.jwtHelper.isTokenExpired(token); 
+    if (!token || !this.jwtHelper) {
+      console.warn('No token or JwtHelperService is undefined');
+      return false;
+    }
+    return !this.jwtHelper.isTokenExpired(token);
   }
 
   private isValidSession(session: Session): boolean {

@@ -1,5 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Observable } from 'rxjs';
+import { SessionService } from 'src/app/core/services/session.service';
 
 @Component({
   selector: 'app-home',
@@ -8,6 +10,7 @@ import { Router } from '@angular/router';
 })
 export class HomeComponent implements OnInit, OnDestroy {
   constructor(
+    private sessionService: SessionService,
     private router: Router,
   ) {}
 
@@ -15,6 +18,10 @@ export class HomeComponent implements OnInit, OnDestroy {
 
   ngOnDestroy() {
 
+  }
+
+  public $isLogged(): Observable<boolean> {
+    return this.sessionService.$isLogged();
   }
 
   public navigateLogin(): void{

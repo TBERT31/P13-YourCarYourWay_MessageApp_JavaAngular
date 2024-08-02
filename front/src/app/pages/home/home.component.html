@@ -1,20 +1,28 @@
-<div class="homepage">
+<div class="homepage" *ngIf="!($isLogged() | async)">
   <div class="homepage_banner"><img class="homepage_banner_img" src="assets/P12_banner.png" alt="Banner Your car your way"></div>
-
   <div class="homepage_container">
         <a 
           class="homepage_button homepage_button_login" 
-          mat-button 
-          (click)="navigateLogin()"
+          routerLink="login"
         >
             Login
         </a>
         <a 
           class="homepage_button homepage_button_register" 
-          mat-button 
-          (click)="navigateRegister()"
+          routerLink="register"
         >
             Register
         </a>
   </div>
 </div>
+
+<div class="homepage" *ngIf="($isLogged() | async)">
+    <a class="temporary_link" routerLink="discussion">
+      There is no content at the moment, would you like to contact us?
+    </a>
+
+    <a class="container-help" routerLink="discussion">
+      <mat-icon class="container-help-icon">forum</mat-icon>
+    </a>
+</div>
+

@@ -1,7 +1,8 @@
 <header class="header">
     <mat-toolbar class="toolbar">
         <a href=""><img class="toolbar_img" src="./assets/yourcaryourway_logo.png" alt="logo Your Car Your Way"></a>
-        <ul class="toolbar_ul">
+        
+        <ul class="toolbar_ul" *ngIf="!($isLogged() | async)">
             <li class="toolbar_ul_li">
                 <a class="toolbar_ul_li_a" routerLink="" 
                 routerLinkActive="active"  
@@ -24,5 +25,20 @@
                 </a>
             </li>
        </ul>
+
+       <ul class="toolbar_ul" *ngIf="($isLogged() | async)">
+        <li class="toolbar_ul_li">
+            <a class="toolbar_ul_li_a" routerLink="discussion"
+            routerLinkActive="active"  
+            [routerLinkActiveOptions]="{ exact: true }">
+                Online Chat
+            </a>
+        </li>
+        <li class="toolbar_ul_li">
+            <a class="toolbar_ul_li_a" (click)="logout()" routerLink=""> 
+                Logout
+            </a>
+        </li>
+   </ul>
     </mat-toolbar>
 </header>
