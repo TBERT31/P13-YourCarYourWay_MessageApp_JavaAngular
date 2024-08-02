@@ -13,6 +13,9 @@ import { RegisterComponent } from './pages/auth/register/register.component';
 import { LoginComponent } from './pages/auth/login/login.component';
 import { JwtInterceptor } from './core/interceptor/jwt.interceptor';
 import { HomeComponent } from './pages/home/home.component';
+import { DiscussionsListComponent } from './pages/discussions/discussions-list/discussions-list.component';
+import { DiscussionsDetailComponent } from './pages/discussions/discussions-detail/discussions-detail.component';
+import { DiscussionsFormComponent } from './pages/discussions/discussions-form/discussions-form.component';
 
 
 @NgModule({
@@ -23,6 +26,9 @@ import { HomeComponent } from './pages/home/home.component';
     NotFoundComponent,
     RegisterComponent,
     LoginComponent,
+    DiscussionsListComponent,
+    DiscussionsDetailComponent,
+    DiscussionsFormComponent,
   ],
   imports: [
     BrowserModule,

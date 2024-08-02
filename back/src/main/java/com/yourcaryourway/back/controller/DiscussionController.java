@@ -33,7 +33,7 @@ public class DiscussionController {
     }
 
     @GetMapping("")
-    public ResponseEntity<List<DiscussionDto>> getAllDiscussion(){
+    public ResponseEntity<List<DiscussionDto>> getAllDiscussions(){
         List<Discussion> discussions = discussionService.getAllDiscussions();
         return ResponseEntity.ok(discussionMapper.toDtoList(discussions));
     }

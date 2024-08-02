@@ -1,12 +1,13 @@
 import { Injectable } from '@angular/core';
-import {ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot, UrlTree} from "@angular/router";
-import {Observable} from "rxjs";
+import { ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot, UrlTree } from "@angular/router";
+import { Observable } from "rxjs";
+import { map } from 'rxjs/operators'; // Import de l'opérateur map
 import { SessionService } from '../services/session.service';
 
 @Injectable({
   providedIn: 'root'
 })
-export class TokenGuard implements CanActivate{
+export class TokenGuard implements CanActivate {
 
     constructor(
         private router: Router,
@@ -17,17 +18,14 @@ export class TokenGuard implements CanActivate{
         route: ActivatedRouteSnapshot,
         state: RouterStateSnapshot
     ): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-        let isLogged: boolean = false;
-
-        this.sessionService.$isLogged().subscribe(loggedIn => {
-            isLogged = loggedIn;
-        });
-
-        if (!isLogged) {
-            this.router.navigate(['login']);
-            return false;
-        }
-  
-        return true;
+        return this.sessionService.$isLogged().pipe(
+            map(isLogged => {
+                if (!isLogged) {
+                    this.router.navigate(['login']);
+                    return false;
+                }
+                return true;
+            })
+        );
     }
 }

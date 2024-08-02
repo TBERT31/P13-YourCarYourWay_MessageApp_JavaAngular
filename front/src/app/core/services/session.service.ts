@@ -13,7 +13,7 @@ export class SessionService {
   private jwtHelper: JwtHelperService;
 
   constructor() {
-    this.jwtHelper = new JwtHelperService();  // Assurez-vous que c'est bien initialisé ici
+    this.jwtHelper = new JwtHelperService();  
     this.loadSession();
   }
 

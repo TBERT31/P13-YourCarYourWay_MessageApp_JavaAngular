@@ -28,9 +28,16 @@
 
        <ul class="toolbar_ul" *ngIf="($isLogged() | async)">
         <li class="toolbar_ul_li">
-            <a class="toolbar_ul_li_a" routerLink="discussion"
+            <a class="toolbar_ul_li_a" routerLink="" 
             routerLinkActive="active"  
             [routerLinkActiveOptions]="{ exact: true }">
+                Home
+            </a>
+        </li>
+        <li class="toolbar_ul_li">
+            <a class="toolbar_ul_li_a" routerLink="discussion"
+            routerLinkActive="active"  
+            [routerLinkActiveOptions]="{ exact: false }">
                 Online Chat
             </a>
         </li>
