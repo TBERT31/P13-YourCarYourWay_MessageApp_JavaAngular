@@ -1,10 +1,12 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Observable, Subscription } from 'rxjs';
+import { MatDialog } from '@angular/material/dialog';
 import { Discussion } from 'src/app/core/interfaces/discussions.interface';
 import { User } from 'src/app/core/interfaces/user.interface';
 import { DiscussionsService } from 'src/app/core/services/discussions.service';
 import { SessionService } from 'src/app/core/services/session.service';
 import { UserService } from 'src/app/core/services/user.service';
+import { DiscussionsFormComponent } from '../discussions-form/discussions-form.component';
 
 @Component({
   selector: 'app-discussions-list',
@@ -19,7 +21,8 @@ export class DiscussionsListComponent implements OnInit, OnDestroy {
   constructor(
     private discussionsService: DiscussionsService,
     private sessionService: SessionService, 
-    private userService: UserService
+    private userService: UserService,
+    private dialog: MatDialog // Injection de MatDialog
   ) {}
 
   ngOnInit(): void {
@@ -91,7 +94,6 @@ export class DiscussionsListComponent implements OnInit, OnDestroy {
 
     const discussionSub = this.discussionsService.updateDiscussionStatusById(discussion.id, { ...discussion, status: newStatus }).subscribe(
       (updatedDiscussion) => {
-        console.log('Discussion updated successfully:', updatedDiscussion);
         this.loadDiscussionsBasedOnUserRole(this.user!);
       },
       (error) => {
@@ -100,5 +102,37 @@ export class DiscussionsListComponent implements OnInit, OnDestroy {
     );
 
     this.subscriptions.add(discussionSub);
+  }
+
+  public openAddDialog(): void {
+    const dialogRef = this.dialog.open(DiscussionsFormComponent, {
+      width: '80%',
+      data: {} 
+    });
+
+    dialogRef.afterClosed().subscribe((title: string | undefined) => { 
+      console.log('La modal a été fermée');
+      if (title) {
+        const newDiscussion: Discussion = {
+          id: 0, 
+          title: title,
+          status: 'New',
+          participantIds: [this.user!.id],
+          messageIds: [],
+        };
+
+        const createSub = this.discussionsService.createDiscussion(newDiscussion).subscribe(
+          (createdDiscussion) => {
+            console.log('Discussion créée:', createdDiscussion);
+            this.loadDiscussionsBasedOnUserRole(this.user!); 
+          },
+          (error) => {
+            console.error('Erreur lors de la création de la discussion:', error);
+          }
+        );
+
+        this.subscriptions.add(createSub);
+      }
+    });
   }
 }

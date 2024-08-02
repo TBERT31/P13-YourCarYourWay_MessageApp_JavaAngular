@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { MaterialModule } from './material.module';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { TruncatePipe } from './pipe/truncate.pipe';
 
@@ -11,6 +11,7 @@ import { TruncatePipe } from './pipe/truncate.pipe';
   ],
   imports: [
     ReactiveFormsModule,
+    FormsModule, 
     RouterModule,
     MaterialModule,
   ],
@@ -18,6 +19,7 @@ import { TruncatePipe } from './pipe/truncate.pipe';
     TruncatePipe,
     ReactiveFormsModule,
     MaterialModule, 
+    FormsModule,
   ]
 })
 export class SharedModule { }

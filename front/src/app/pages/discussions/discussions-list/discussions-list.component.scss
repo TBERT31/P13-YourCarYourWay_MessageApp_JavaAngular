@@ -37,3 +37,17 @@
       }
 }
 
+.container-add{
+    z-index: 10;
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+
+    &-icon{
+        color: gray;
+        font-size: 48px; 
+        width: 48px; 
+        height: 48px; 
+        cursor: pointer;
+    }
+}

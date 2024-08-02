@@ -8,7 +8,7 @@
                     <div mat-card-avatar class="discussions-header-image"></div>
 
                 <mat-card-title>{{discussion.title | truncate:100}}</mat-card-title>
-                <mat-card-subtitle>Written by: {{discussion.author | truncate:100}}</mat-card-subtitle>
+                <mat-card-subtitle>Written by: {{discussion.author ?  discussion.author : '' | truncate:100}}</mat-card-subtitle>
 
 
                 <div class="subtitle-group">
@@ -29,4 +29,8 @@
             </mat-card-actions>
           </mat-card>
     </div>
+
+    <a class="container-add" (click)="openAddDialog()">
+        <mat-icon class="container-add-icon">add_circle</mat-icon>
+    </a>
 </div>

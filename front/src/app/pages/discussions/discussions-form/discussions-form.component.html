@@ -1,1 +1,18 @@
-<p>discussions-form works!</p>
+<h1 mat-dialog-title>Create a new Chat</h1>
+<div mat-dialog-content class="content_dialog">
+    <form class="form">
+        <mat-form-field class="form_field" appearance="outline">
+            <mat-label>Issue Object</mat-label>
+            <textarea 
+                maxlength="255" 
+                matInput placeholder="Give a brief description of your request..." 
+                [(ngModel)]="title" 
+                name="title"
+            ></textarea>
+        </mat-form-field>
+    </form>
+</div>
+<div mat-dialog-actions>
+    <button mat-button (click)="onNoClick()">Cancel</button>
+    <button mat-button [mat-dialog-close]="title" cdkFocusInitial>Save</button>
+</div>

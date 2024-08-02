@@ -27,13 +27,8 @@ const routes: Routes = [
         component: DiscussionsListComponent
       },
       {
-        title: 'Discussion Form',
-        path: 'form',
-        component: DiscussionsFormComponent
-      },
-      {
         title: 'Discussion Detail',
-        path: 'detail',
+        path: 'detail/:id',
         component: DiscussionsDetailComponent
       },
     ],

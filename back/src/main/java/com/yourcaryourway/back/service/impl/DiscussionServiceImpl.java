@@ -27,7 +27,7 @@ public class DiscussionServiceImpl implements DiscussionService {
 
     @Override
     public List<Discussion> getAllDiscussions(){
-        return discussionRepository.findAll(Sort.by(Sort.Direction.DESC, "createdAt"));
+        return discussionRepository.findAll(Sort.by(Sort.Direction.ASC, "createdAt"));
     }
 
     @Override

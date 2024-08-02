@@ -24,6 +24,7 @@ public class UserMapper {
                 .firstname(user.getFirstname())
                 .lastname(user.getLastname())
                 .address(user.getAddress())
+                .admin(user.isAdmin())
                 .birthDate(user.getBirthDate())
                 .createdAt(user.getCreatedAt())
                 .updatedAt(user.getUpdatedAt())
