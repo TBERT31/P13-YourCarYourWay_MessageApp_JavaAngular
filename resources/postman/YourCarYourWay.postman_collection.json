@@ -199,7 +199,7 @@
 					"response": []
 				},
 				{
-					"name": "getByIUserId",
+					"name": "getByUserId",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -337,7 +337,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqYW5lLmRvZUB0ZXN0LmNvbSIsImlhdCI6MTcyMjQ1MzA5OSwiZXhwIjoxNzIyNTM5NDk5fQ.U1UKx4oHzGOQLc85sZN6E1g9OKbuWoy6AQJiDZWHCfU",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqYW5lLmRvZUB0ZXN0LmNvbSIsImlhdCI6MTcyMjY4NDI1NywiZXhwIjoxNzIyNzcwNjU3fQ.jPQ1vfUCDXap7R0jCXlKCt8THrNWRqXkKgxala5x6KE",
 									"type": "string"
 								}
 							]

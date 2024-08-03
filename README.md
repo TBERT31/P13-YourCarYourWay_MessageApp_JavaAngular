@@ -134,6 +134,12 @@ by following the documentation:
 
 [Importing Data into Postman](https://learning.postman.com/docs/getting-started/importing-and-exporting-data/#importing-data-into-postman)
 
+
+## Try App
+
+All users have been registered with the password: `Test!1234`, I'll let you browse the app to find out how it works.
+
+
 ## Authors
 
 Main developer: Thomas Berteau

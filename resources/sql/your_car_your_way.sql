@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : jeu. 01 août 2024 à 12:11
+-- Généré le : sam. 03 août 2024 à 20:54
 -- Version du serveur : 8.0.36
 -- Version de PHP : 8.2.12
 
@@ -88,7 +88,9 @@ CREATE TABLE `discussions` (
 
 INSERT INTO `discussions` (`id`, `title`, `status_name`, `created_at`, `updated_at`) VALUES
 (1, 'Error with my reservation', 'New', '2024-07-31 15:17:20', '2024-07-31 15:29:57'),
-(2, 'Need to postpone my reservation', 'New', '2024-07-31 15:19:08', '2024-07-31 15:19:08');
+(2, 'Need to postpone my reservation', 'In Progress', '2024-07-31 15:19:08', '2024-08-02 17:37:45'),
+(3, 'Can I upgrade my Car for August Holidays ?', 'Closed', '2024-08-02 17:25:19', '2024-08-02 17:37:44'),
+(4, 'I need to cancel my reservation for tomorrow, can I be reimburse ?', 'New', '2024-08-02 17:53:18', '2024-08-03 11:45:50');
 
 -- --------------------------------------------------------
 
@@ -107,7 +109,9 @@ CREATE TABLE `discussion_participants` (
 
 INSERT INTO `discussion_participants` (`discussion_id`, `user_id`) VALUES
 (1, 4),
-(2, 4);
+(2, 4),
+(3, 4),
+(4, 5);
 
 -- --------------------------------------------------------
 
@@ -130,7 +134,16 @@ CREATE TABLE `messages` (
 --
 
 INSERT INTO `messages` (`id`, `content`, `discussion`, `author`, `direct`, `created_at`, `updated_at`) VALUES
-(1, 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.', 1, 4, 1, '2024-07-31 15:37:08', '2024-07-31 15:37:08');
+(1, 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.', 1, 4, 1, '2024-07-31 15:37:08', '2024-07-31 15:37:08'),
+(2, 'Hello John effectively! \nPrimis litora dapibus senectus fermentum tortor ad; nisi sed. Quis magnis molestie scelerisque eu sit nec vulputate duis condimentum. Praesent quis commodo quisque class sociosqu suspendisse.', 1, 1, 1, '2024-08-03 12:24:01', '2024-08-03 12:24:01'),
+(3, 'Nibh laoreet a commodo venenatis diam et litora. Elit convallis platea nisl quis convallis lacus ornare lobortis maximus. Cras eu torquent libero tempus curae. Tellus erat massa tortor risus erat curabitur.', 1, 1, 1, '2024-08-03 12:24:29', '2024-08-03 12:24:29'),
+(4, 'Ok ok I understand...\nMaximus velit tempor conubia vel etiam pellentesque libero. Quis cras consequat libero per adipiscing eu. Per fames ipsum dapibus aliquam neque. Dictumst vehicula nunc sagittis sapien; ac odio litora. Nullam fringilla pulvinar ante habitant odio maximus vivamus.', 1, 4, 1, '2024-08-03 12:26:10', '2024-08-03 12:26:10'),
+(5, 'Leo placerat blandit eros proin commodo diam. Lacinia per curae nibh conubia habitant quisque vivamus luctus. Fermentum tellus ad pellentesque posuere luctus netus est. Tortor orci rhoncus natoque ultrices nulla nunc volutpat fermentum suspendisse. Cursus potenti adipiscing justo rhoncus proin euismod maecenas. Rutrum eget amet turpis eleifend praesent, nisi urna montes. Duis proin euismod risus primis odio.', 1, 4, 1, '2024-08-03 12:26:27', '2024-08-03 12:26:27'),
+(6, 'Leo placerat blandit eros proin commodo diam. Lacinia per curae nibh conubia habitant quisque vivamus luctus. Fermentum tellus ad pellentesque posuere luctus netus est. Tortor orci rhoncus natoque ultrices nulla nunc volutpat fermentum suspendisse. Cursus potenti adipiscing justo rhoncus proin euismod maecenas. Rutrum eget amet turpis eleifend praesent, nisi urna montes. Duis proin euismod risus primis odio.', 1, 4, 1, '2024-08-03 12:26:31', '2024-08-03 12:26:31'),
+(7, 'Hello, I\'m Kaya from the support department too, and I\'m repeating what Thomas said:\nQuisque elit vestibulum velit himenaeos ipsum ridiculus tempus felis ridiculus. Conubia sagittis cubilia nam consectetur tortor est finibus. Imperdiet risus rutrum vitae torquent venenatis nibh placerat. Ullamcorper augue lobortis mus orci lacinia blandit consectetur faucibus pretium. Diam himenaeos litora ullamcorper eros egestas nibh. Cubilia facilisi felis; quisque id viverra cras. Libero tempus fusce semper magnis justo posuere quisque. Etiam habitant nibh velit fermentum maximus fusce adipiscing felis. Blandit class lectus pulvinar non; dis ad.', 1, 3, 1, '2024-08-03 12:27:51', '2024-08-03 12:27:51'),
+(8, 'Lorem ipsum odor amet, consectetuer adipiscing elit. Tincidunt fusce tempor aptent duis convallis montes nascetur. Cursus duis sit ipsum fames; adipiscing habitant netus? ', 1, 3, 1, '2024-08-03 12:28:58', '2024-08-03 12:28:58'),
+(9, 'Hello, I\'m Kaya from the support department too, and I\'m repeating what Thomas said: Quisque elit vestibulum velit himenaeos ipsum ridiculus tempus felis ridiculus. Conubia sagittis cubilia nam consectetur tortor est finibus. Imperdiet risus rutrum vitae torquent venenatis nibh placerat. Ullamcorper augue lobortis mus orci lacinia blandit consectetur faucibus pretium. Diam himenaeos litora ullamcorper eros egestas nibh. Cubilia facilisi felis; quisque id viverra cras. Libero tempus fusce semper magnis justo posuere quisque. Etiam habitant nibh velit fermentum maximus fusce adipiscing felis. Blandit class lectus pulvinar non; dis ad.Hello, I\'m Kaya from the support department too, and I\'m repeating what Thomas said: Quisque elit vestibulum velit himenaeos ipsum ridiculus tempus felis ridiculus. Conubia sagittis cubilia nam consectetur tortor est finibus. Imperdiet risus rutrum vitae torquent venenatis nibh placerat. Ullamcorper augue lobortis mus orci lacinia blandit consectetur faucibus pretium. Diam himenaeos litora ullamcorper eros egestas nibh. Cubilia facilisi felis; quisque id viverra cras. Libero tempus fusce semper magnis justo posuere quisque. Etiam habitant nibh velit fermentum maximus fusce adipiscing felis. Blandit class lectus pulvinar non; dis ad.Hello, I\'m Kaya from the support department too, and I\'m repeating what Thomas said: Quisque elit vestibulum velit himenaeos ipsum ridiculus tempus felis ridiculus. Conubia sagittis cubilia nam consectetur tortor est finibus. Imperdiet risus rutrum vitae torquent venenatis nibh placerat. Ullamcorper augue lobortis mus orci lacinia blandit consectetur faucibus pretium. Diam himenaeos litora ullamcorper eros egestas nibh. Cubilia facilisi felis; quisque id viverra cras. Libero tempus fusce semper magnis justo posuere quisque. Etiam habitant nibh velit fermentum maximus fusce adipiscing felis. Blandit class lectus pulvinar non; dis ad.', 1, 3, 1, '2024-08-03 18:21:51', '2024-08-03 18:21:51'),
+(10, 'vvvvvv', 1, 3, 1, '2024-08-03 18:22:23', '2024-08-03 18:22:23');
 
 -- --------------------------------------------------------
 
@@ -357,13 +370,13 @@ ALTER TABLE `agencies`
 -- AUTO_INCREMENT pour la table `discussions`
 --
 ALTER TABLE `discussions`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT pour la table `messages`
 --
 ALTER TABLE `messages`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT pour la table `offers`
