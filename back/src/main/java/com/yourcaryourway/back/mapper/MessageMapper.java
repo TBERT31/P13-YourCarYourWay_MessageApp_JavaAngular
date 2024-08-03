@@ -24,7 +24,7 @@ public class MessageMapper {
                 .id(message.getId())
                 .content(message.getContent())
                 .discussion_id(message.getDiscussion().getId())
-                .author_id(message.getAuthor().getId())
+                .author(message.getAuthor().getEmail())
                 .direct(message.isDirect())
                 .createdAt(message.getCreatedAt())
                 .updatedAt(message.getUpdatedAt())
@@ -32,6 +32,11 @@ public class MessageMapper {
     }
 
     public Message toEntity(MessageDto messageDto){
+
+        User author = userRepository.findByEmail(messageDto.getAuthor());
+        if (author == null) {
+            throw new IllegalArgumentException("Invalid author email: " + messageDto.getAuthor());
+        }
 
         Message build = Message.builder()
                 .id(messageDto.getId())
@@ -42,9 +47,7 @@ public class MessageMapper {
                                 .orElseThrow(() -> new IllegalArgumentException("Invalid discussion ID: " + messageDto.getDiscussion_id()))
                 )
                 .author(
-                        userRepository.findById(messageDto.getAuthor_id())
-                                //.orElse(null)
-                                .orElseThrow(() -> new IllegalArgumentException("Invalid author ID: " + messageDto.getAuthor_id()))
+                        author
                 )
                 .direct(messageDto.isDirect()) // Mapping direct field
                 .createdAt(messageDto.getCreatedAt())

@@ -28,11 +28,11 @@ public class MessageServiceImpl implements MessageService {
 
     @Override
     public List<Message> getMessagesByDiscussionId(int discussionId){
-        return  messageRepository.findAllByDiscussionIdOrderByCreatedAtDesc(discussionId);
+        return  messageRepository.findAllByDiscussionIdOrderByCreatedAtAsc(discussionId);
     }
 
     @Override
     public List<Message> getMessagesByUserId(int userId){
-        return  messageRepository.findAllByAuthorIdOrderByCreatedAtDesc(userId);
+        return  messageRepository.findAllByAuthorIdOrderByCreatedAtAsc(userId);
     }
 }

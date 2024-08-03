@@ -22,7 +22,7 @@ export class DiscussionsListComponent implements OnInit, OnDestroy {
     private discussionsService: DiscussionsService,
     private sessionService: SessionService, 
     private userService: UserService,
-    private dialog: MatDialog // Injection de MatDialog
+    private dialog: MatDialog 
   ) {}
 
   ngOnInit(): void {

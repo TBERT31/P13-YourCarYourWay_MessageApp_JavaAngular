@@ -1,1 +1,61 @@
-<p>discussions-detail works!</p>
+<div class="discussion" *ngIf="discussion">
+  <div class="discussion-header">
+    <div class="discussion-dates">
+      <button class="back-button" mat-icon-button (click)="back()">
+        <mat-icon class="back-button-icon">keyboard_backspace</mat-icon>
+      </button>
+      <div class="discussion-infos_created_at">
+        <span class="created_date">Created at: {{ discussion.createdAt | date: 'yyyy/MM/dd' }}</span>
+      </div>
+      <div class="discussion-infos_updated_at">
+        <span class="updated_date">Updated at: {{ discussion.updatedAt | date: 'yyyy/MM/dd' }}</span>
+      </div>
+    </div>
+
+    <h1 class="discussion-title">{{ discussion.title }}</h1>
+
+    <div class="discussion-status">
+      <span [ngClass]="getStatusClass(discussion.status)" class="status-pill">
+        {{ discussion.status }}
+      </span>
+    </div>
+  </div>
+
+  <div class="message-area" #scrollContainer>
+      <div>
+          <div 
+              *ngFor="let message of messages$ | async"
+              [ngClass]="{
+              'my-message': message.author === userEmail,
+              'other-message': message.author !== userEmail
+              }"
+              class="message-container"
+          >
+              <p class="message-area-username">{{ message.author }}</p>
+              <p class="message-area-message">{{ message.content }}</p>
+          </div>
+      </div>
+      <div class="anchor" #anchor></div>
+
+      <form class="message-area-form" [formGroup]="messageForm!" (ngSubmit)="sendMessage()">
+          <div class="message-area-container">
+          <mat-form-field appearance="outline" class="message-area-field">
+              <mat-label>Write your message here</mat-label>
+              <textarea
+              class="message-area-input"
+              matInput
+              formControlName="message"
+              placeholder="Write your message here"
+              ></textarea>
+              <mat-error *ngIf="messageForm.get('message')?.invalid && messageForm.get('message')?.touched">
+              Please enter your message (2000 characters maximum)
+              </mat-error>
+          </mat-form-field>
+          <button class="message-area-submit" color="primary" type="submit" [disabled]="messageForm!.invalid">
+              <mat-icon class="send-icon">send</mat-icon>
+          </button>
+          </div>
+      </form>
+  </div>
+</div>
+<app-not-found *ngIf="!discussion"></app-not-found>

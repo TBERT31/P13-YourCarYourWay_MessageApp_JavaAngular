@@ -8,6 +8,6 @@ import java.util.List;
 
 @Repository
 public interface MessageRepository extends JpaRepository<Message, Integer> {
-    List<Message> findAllByDiscussionIdOrderByCreatedAtDesc(int discussionId);
-    List<Message> findAllByAuthorIdOrderByCreatedAtDesc(int authorId);
+    List<Message> findAllByDiscussionIdOrderByCreatedAtAsc(int discussionId);
+    List<Message> findAllByAuthorIdOrderByCreatedAtAsc(int authorId);
 }

@@ -3,11 +3,13 @@ import { MaterialModule } from './material.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { TruncatePipe } from './pipe/truncate.pipe';
+import { ScrollToBottomDirective } from './directives/scroll-to-bottom.directive';
 
 
 @NgModule({
   declarations: [
     TruncatePipe,
+    ScrollToBottomDirective,
   ],
   imports: [
     ReactiveFormsModule,
@@ -20,6 +22,7 @@ import { TruncatePipe } from './pipe/truncate.pipe';
     ReactiveFormsModule,
     MaterialModule, 
     FormsModule,
+    ScrollToBottomDirective
   ]
 })
 export class SharedModule { }

@@ -1,14 +1,16 @@
 <div class="discussions">
     <div class="discussions-cards-container">
         <mat-card 
-        [routerLink]="['detail',discussion.id]"
+        [routerLink]="['/discussion/detail',discussion.id]"
         *ngFor="let discussion of (discussions$ | async)"
         class="discussions-card" appearance="outlined">
             <mat-card-header class="discussions-card-header">
-                    <div mat-card-avatar class="discussions-header-image"></div>
+                <div mat-card-avatar class="discussions-header-image"></div>
 
                 <mat-card-title>{{discussion.title | truncate:100}}</mat-card-title>
-                <mat-card-subtitle>Written by: {{discussion.author ?  discussion.author : '' | truncate:100}}</mat-card-subtitle>
+                <mat-card-subtitle>
+                    Written by: {{discussion.author ?  discussion.author : '' | truncate:100}}
+                </mat-card-subtitle>
 
 
                 <div class="subtitle-group">
@@ -17,8 +19,12 @@
                             {{ discussion.status }}
                         </span>
                     </mat-card-subtitle>
-                    <mat-card-subtitle class="date">Created at: {{discussion.createdAt | date:'yyyy/MM/dd'}}</mat-card-subtitle>
-                    <mat-card-subtitle class="date">Updated at: {{discussion.updatedAt | date:'yyyy/MM/dd'}}</mat-card-subtitle>
+                    <mat-card-subtitle class="date">
+                        Created at: {{discussion.createdAt | date:'yyyy/MM/dd'}}
+                    </mat-card-subtitle>
+                    <mat-card-subtitle class="date">
+                        Updated at: {{discussion.updatedAt | date:'yyyy/MM/dd'}}
+                    </mat-card-subtitle>
                 </div>
             </mat-card-header>
             

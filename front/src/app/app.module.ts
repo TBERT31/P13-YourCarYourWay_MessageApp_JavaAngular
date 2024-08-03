@@ -17,7 +17,6 @@ import { DiscussionsListComponent } from './pages/discussions/discussions-list/d
 import { DiscussionsDetailComponent } from './pages/discussions/discussions-detail/discussions-detail.component';
 import { DiscussionsFormComponent } from './pages/discussions/discussions-form/discussions-form.component';
 
-
 @NgModule({
   declarations: [
     AppComponent,

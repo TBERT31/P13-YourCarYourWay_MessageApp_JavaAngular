@@ -1,0 +1,112 @@
+.discussion {
+    box-sizing: border-box;
+    padding: 5px 15px;
+
+    &-header {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        align-items: center;
+    }
+
+    .message-area {
+        margin-top: 10px;
+
+        &-form {
+            background-color: white;
+            z-index: 10;
+            position: fixed;
+            bottom: 0px;
+            left: 15px;
+            width: 100%;
+        }
+
+        &-container {
+            display: flex; 
+            align-items: center; 
+            width: 95%;
+        }
+
+        &-field {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 80%;
+            margin-right: 10px; 
+            flex: 1; 
+        }
+
+        &-submit {
+            flex-shrink: 0;
+            margin-right: 15px; 
+        }
+
+        &-input {
+            resize: none; 
+        }
+
+        &-list {
+            margin-bottom: 20px; 
+        }
+
+        .message-container {
+            max-width: 80%;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            display: inline-block;
+            flex-direction: column;
+            align-items: flex-start;
+            word-wrap: break-word;
+
+            &.my-message {
+                background-color: #225ec4;
+                color: white;
+                margin-left: auto; 
+                text-align: right;
+                float: right;
+                clear: both;
+            }
+
+            &.other-message {
+                background-color: #ff3b00;
+                color: white;
+                margin-right: auto; 
+                align-items: flex-start;
+            }
+        }
+
+        .message-area-username {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .message-area-message {
+            margin: 0;
+        }
+
+    }
+}
+
+.status-pill {
+    padding: 0.25em 0.5em;
+    border-radius: 15px;
+    color: white;
+    font-weight: bold;
+    font-size: 0.75em;
+    text-transform: uppercase;
+    display: inline-block;
+}
+
+.status-new {
+    background-color: green;
+}
+
+.status-in-progress {
+    background-color: orange;
+}
+
+.status-closed {
+    background-color: red;
+}

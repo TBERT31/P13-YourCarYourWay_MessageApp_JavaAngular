@@ -6,7 +6,6 @@ import { RegisterComponent } from './pages/auth/register/register.component';
 import { LoginComponent } from './pages/auth/login/login.component';
 import { TokenGuard } from './core/guard/token-guard';
 import { DiscussionsListComponent } from './pages/discussions/discussions-list/discussions-list.component';
-import { DiscussionsFormComponent } from './pages/discussions/discussions-form/discussions-form.component';
 import { DiscussionsDetailComponent } from './pages/discussions/discussions-detail/discussions-detail.component';
 
 const routes: Routes = [
