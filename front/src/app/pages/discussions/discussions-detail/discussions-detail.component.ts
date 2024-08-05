@@ -85,9 +85,11 @@ export class DiscussionsDetailComponent implements OnInit, OnDestroy, AfterViewI
   private loadMessages(): void {
     if (this.discussion) {
       this.messages$ = this.messagesService.getMessagesByDiscussionId(this.discussion.id);
-      this.messages$.subscribe(() => {
+      const messageSub = this.messages$.subscribe(() => {
         this.scrollToBottom();
       });
+
+      this.subscriptions.add(messageSub);
     }
   }
 
@@ -101,7 +103,7 @@ export class DiscussionsDetailComponent implements OnInit, OnDestroy, AfterViewI
         direct: true,
       } as Message;
 
-      const messageSubscription = this.messagesService.createMessage(message).subscribe(
+      const newMessageSub = this.messagesService.createMessage(message).subscribe(
         (messageResponse: Message) => {
           this.initMessageForm();
           this.matSnackBar.open('Votre commentaire a été envoyé!', 'Close', {
@@ -111,7 +113,7 @@ export class DiscussionsDetailComponent implements OnInit, OnDestroy, AfterViewI
         }
       );
 
-      this.subscriptions.add(messageSubscription);
+      this.subscriptions.add(newMessageSub);
     }
   }
 
