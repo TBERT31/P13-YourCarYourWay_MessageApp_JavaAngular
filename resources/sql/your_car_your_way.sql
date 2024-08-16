@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : sam. 03 août 2024 à 20:54
+-- Généré le : ven. 16 août 2024 à 16:15
 -- Version du serveur : 8.0.36
 -- Version de PHP : 8.2.12
 
@@ -31,7 +31,11 @@ CREATE TABLE `agencies` (
   `id` int NOT NULL,
   `name` varchar(50) COLLATE utf8mb4_general_ci NOT NULL,
   `address` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
-  `city` varchar(255) COLLATE utf8mb4_general_ci NOT NULL
+  `city` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
+  `country` varchar(50) COLLATE utf8mb4_general_ci NOT NULL,
+  `latitude` decimal(10,7) NOT NULL,
+  `longitude` decimal(10,7) NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -78,6 +82,7 @@ CREATE TABLE `discussions` (
   `id` int NOT NULL,
   `title` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
   `status_name` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `direct` tinyint NOT NULL DEFAULT '1',
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -86,11 +91,11 @@ CREATE TABLE `discussions` (
 -- Déchargement des données de la table `discussions`
 --
 
-INSERT INTO `discussions` (`id`, `title`, `status_name`, `created_at`, `updated_at`) VALUES
-(1, 'Error with my reservation', 'New', '2024-07-31 15:17:20', '2024-07-31 15:29:57'),
-(2, 'Need to postpone my reservation', 'In Progress', '2024-07-31 15:19:08', '2024-08-02 17:37:45'),
-(3, 'Can I upgrade my Car for August Holidays ?', 'Closed', '2024-08-02 17:25:19', '2024-08-02 17:37:44'),
-(4, 'I need to cancel my reservation for tomorrow, can I be reimburse ?', 'New', '2024-08-02 17:53:18', '2024-08-03 11:45:50');
+INSERT INTO `discussions` (`id`, `title`, `status_name`, `direct`, `created_at`, `updated_at`) VALUES
+(1, 'Error with my reservation', 'New', 1, '2024-07-31 15:17:20', '2024-08-03 19:02:07'),
+(2, 'Need to postpone my reservation', 'In Progress', 1, '2024-07-31 15:19:08', '2024-08-02 17:37:45'),
+(3, 'Can I upgrade my Car for August Holidays ?', 'Closed', 1, '2024-08-02 17:25:19', '2024-08-02 17:37:44'),
+(4, 'I need to cancel my reservation for tomorrow, can I be reimburse ?', 'New', 1, '2024-08-02 17:53:18', '2024-08-03 11:45:50');
 
 -- --------------------------------------------------------
 
@@ -112,6 +117,21 @@ INSERT INTO `discussion_participants` (`discussion_id`, `user_id`) VALUES
 (2, 4),
 (3, 4),
 (4, 5);
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `locations`
+--
+
+CREATE TABLE `locations` (
+  `id` int NOT NULL,
+  `vehicle_id` int NOT NULL,
+  `agency_id` int NOT NULL,
+  `latitude` decimal(10,7) NOT NULL,
+  `longitude` decimal(10,7) NOT NULL,
+  `timestamp` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -143,7 +163,7 @@ INSERT INTO `messages` (`id`, `content`, `discussion`, `author`, `direct`, `crea
 (7, 'Hello, I\'m Kaya from the support department too, and I\'m repeating what Thomas said:\nQuisque elit vestibulum velit himenaeos ipsum ridiculus tempus felis ridiculus. Conubia sagittis cubilia nam consectetur tortor est finibus. Imperdiet risus rutrum vitae torquent venenatis nibh placerat. Ullamcorper augue lobortis mus orci lacinia blandit consectetur faucibus pretium. Diam himenaeos litora ullamcorper eros egestas nibh. Cubilia facilisi felis; quisque id viverra cras. Libero tempus fusce semper magnis justo posuere quisque. Etiam habitant nibh velit fermentum maximus fusce adipiscing felis. Blandit class lectus pulvinar non; dis ad.', 1, 3, 1, '2024-08-03 12:27:51', '2024-08-03 12:27:51'),
 (8, 'Lorem ipsum odor amet, consectetuer adipiscing elit. Tincidunt fusce tempor aptent duis convallis montes nascetur. Cursus duis sit ipsum fames; adipiscing habitant netus? ', 1, 3, 1, '2024-08-03 12:28:58', '2024-08-03 12:28:58'),
 (9, 'Hello, I\'m Kaya from the support department too, and I\'m repeating what Thomas said: Quisque elit vestibulum velit himenaeos ipsum ridiculus tempus felis ridiculus. Conubia sagittis cubilia nam consectetur tortor est finibus. Imperdiet risus rutrum vitae torquent venenatis nibh placerat. Ullamcorper augue lobortis mus orci lacinia blandit consectetur faucibus pretium. Diam himenaeos litora ullamcorper eros egestas nibh. Cubilia facilisi felis; quisque id viverra cras. Libero tempus fusce semper magnis justo posuere quisque. Etiam habitant nibh velit fermentum maximus fusce adipiscing felis. Blandit class lectus pulvinar non; dis ad.Hello, I\'m Kaya from the support department too, and I\'m repeating what Thomas said: Quisque elit vestibulum velit himenaeos ipsum ridiculus tempus felis ridiculus. Conubia sagittis cubilia nam consectetur tortor est finibus. Imperdiet risus rutrum vitae torquent venenatis nibh placerat. Ullamcorper augue lobortis mus orci lacinia blandit consectetur faucibus pretium. Diam himenaeos litora ullamcorper eros egestas nibh. Cubilia facilisi felis; quisque id viverra cras. Libero tempus fusce semper magnis justo posuere quisque. Etiam habitant nibh velit fermentum maximus fusce adipiscing felis. Blandit class lectus pulvinar non; dis ad.Hello, I\'m Kaya from the support department too, and I\'m repeating what Thomas said: Quisque elit vestibulum velit himenaeos ipsum ridiculus tempus felis ridiculus. Conubia sagittis cubilia nam consectetur tortor est finibus. Imperdiet risus rutrum vitae torquent venenatis nibh placerat. Ullamcorper augue lobortis mus orci lacinia blandit consectetur faucibus pretium. Diam himenaeos litora ullamcorper eros egestas nibh. Cubilia facilisi felis; quisque id viverra cras. Libero tempus fusce semper magnis justo posuere quisque. Etiam habitant nibh velit fermentum maximus fusce adipiscing felis. Blandit class lectus pulvinar non; dis ad.', 1, 3, 1, '2024-08-03 18:21:51', '2024-08-03 18:21:51'),
-(10, 'vvvvvv', 1, 3, 1, '2024-08-03 18:22:23', '2024-08-03 18:22:23');
+(10, 'Hello world', 1, 1, 1, '2024-08-06 11:27:44', '2024-08-06 11:27:44');
 
 -- --------------------------------------------------------
 
@@ -153,14 +173,42 @@ INSERT INTO `messages` (`id`, `content`, `discussion`, `author`, `direct`, `crea
 
 CREATE TABLE `offers` (
   `id` int NOT NULL,
-  `departure_agency_id` int NOT NULL,
-  `return_agency_id` int NOT NULL,
-  `departure_date` timestamp NOT NULL,
-  `return_date` timestamp NOT NULL,
-  `vehicle_category` varchar(4) COLLATE utf8mb4_general_ci NOT NULL,
-  `price` float NOT NULL,
-  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+  `departure_agency` int NOT NULL,
+  `return_agency` int NOT NULL,
+  `vehicle_id` int NOT NULL,
+  `start_date` timestamp NOT NULL,
+  `end_date` timestamp NOT NULL,
+  `price` decimal(10,2) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `payment_methods`
+--
+
+CREATE TABLE `payment_methods` (
+  `id` int NOT NULL,
+  `user_id` int NOT NULL,
+  `method_type` enum('card','paypal','bank transfer','') COLLATE utf8mb4_general_ci NOT NULL,
+  `details` json NOT NULL,
+  `is_default` tinyint(1) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `reservations`
+--
+
+CREATE TABLE `reservations` (
+  `id` int NOT NULL,
+  `user_id` int NOT NULL,
+  `offer_id` int NOT NULL,
+  `status` enum('booked','cancelled','completed') COLLATE utf8mb4_general_ci NOT NULL,
+  `start_date` timestamp NOT NULL,
+  `end_date` timestamp NOT NULL,
+  `price` decimal(10,2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -201,6 +249,21 @@ INSERT INTO `status` (`name`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Structure de la table `transactions`
+--
+
+CREATE TABLE `transactions` (
+  `id` int NOT NULL,
+  `user_id` int NOT NULL,
+  `amount` decimal(10,2) NOT NULL,
+  `payment_method` int NOT NULL,
+  `status` enum('pending','completed','failed','') COLLATE utf8mb4_general_ci NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
 -- Structure de la table `users`
 --
 
@@ -235,11 +298,10 @@ INSERT INTO `users` (`id`, `email`, `password`, `firstname`, `lastname`, `birth_
 --
 
 CREATE TABLE `vehicles` (
+  `id` int NOT NULL,
   `registration` varchar(15) COLLATE utf8mb4_general_ci NOT NULL,
   `category` varchar(4) COLLATE utf8mb4_general_ci NOT NULL,
-  `storage agency` int NOT NULL,
-  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+  `status` enum('available','in_service','rented') CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -298,6 +360,13 @@ ALTER TABLE `discussion_participants`
   ADD KEY `fk_participants_user_id` (`user_id`);
 
 --
+-- Index pour la table `locations`
+--
+ALTER TABLE `locations`
+  ADD KEY `fk_locations_vehicle_id` (`vehicle_id`),
+  ADD KEY `fk_locations_agency_id` (`agency_id`);
+
+--
 -- Index pour la table `messages`
 --
 ALTER TABLE `messages`
@@ -310,9 +379,24 @@ ALTER TABLE `messages`
 --
 ALTER TABLE `offers`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `fk_offers_return_agency_id` (`return_agency_id`),
-  ADD KEY `fk_offers_departure_agency_id` (`departure_agency_id`),
-  ADD KEY `fk_offers_category_vehicle` (`vehicle_category`);
+  ADD KEY `fk_offers_departure_agency_id` (`departure_agency`),
+  ADD KEY `fk_offers_return_agency_id` (`return_agency`),
+  ADD KEY `fk_offers_vehicle_id` (`vehicle_id`);
+
+--
+-- Index pour la table `payment_methods`
+--
+ALTER TABLE `payment_methods`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `fk_paument_methods_user_id` (`user_id`);
+
+--
+-- Index pour la table `reservations`
+--
+ALTER TABLE `reservations`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `fk_reservations_user_id` (`user_id`),
+  ADD KEY `fk_reservations_offer_id` (`offer_id`);
 
 --
 -- Index pour la table `reviews`
@@ -329,6 +413,14 @@ ALTER TABLE `status`
   ADD PRIMARY KEY (`name`);
 
 --
+-- Index pour la table `transactions`
+--
+ALTER TABLE `transactions`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `fk_transactions_user_id` (`user_id`),
+  ADD KEY `fk_transactions_payment_method` (`payment_method`);
+
+--
 -- Index pour la table `users`
 --
 ALTER TABLE `users`
@@ -339,9 +431,9 @@ ALTER TABLE `users`
 -- Index pour la table `vehicles`
 --
 ALTER TABLE `vehicles`
-  ADD PRIMARY KEY (`registration`),
-  ADD KEY `fk_vehicles_agency_id` (`storage agency`),
-  ADD KEY `fk_vehicle_category` (`category`);
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `registration` (`registration`),
+  ADD KEY `fk_vehicles_category_code` (`category`);
 
 --
 -- Index pour la table `video_participants`
@@ -385,16 +477,40 @@ ALTER TABLE `offers`
   MODIFY `id` int NOT NULL AUTO_INCREMENT;
 
 --
+-- AUTO_INCREMENT pour la table `payment_methods`
+--
+ALTER TABLE `payment_methods`
+  MODIFY `id` int NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT pour la table `reservations`
+--
+ALTER TABLE `reservations`
+  MODIFY `id` int NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT pour la table `reviews`
 --
 ALTER TABLE `reviews`
   MODIFY `id` int NOT NULL AUTO_INCREMENT;
 
 --
+-- AUTO_INCREMENT pour la table `transactions`
+--
+ALTER TABLE `transactions`
+  MODIFY `id` int NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT pour la table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
+--
+-- AUTO_INCREMENT pour la table `vehicles`
+--
+ALTER TABLE `vehicles`
+  MODIFY `id` int NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT pour la table `video_slots`
@@ -420,6 +536,13 @@ ALTER TABLE `discussion_participants`
   ADD CONSTRAINT `fk_participants_user_id` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
+-- Contraintes pour la table `locations`
+--
+ALTER TABLE `locations`
+  ADD CONSTRAINT `fk_locations_agency_id` FOREIGN KEY (`agency_id`) REFERENCES `agencies` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `fk_locations_vehicle_id` FOREIGN KEY (`vehicle_id`) REFERENCES `vehicles` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
 -- Contraintes pour la table `messages`
 --
 ALTER TABLE `messages`
@@ -430,9 +553,22 @@ ALTER TABLE `messages`
 -- Contraintes pour la table `offers`
 --
 ALTER TABLE `offers`
-  ADD CONSTRAINT `fk_offers_category_vehicle` FOREIGN KEY (`vehicle_category`) REFERENCES `categories` (`code`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `fk_offers_departure_agency_id` FOREIGN KEY (`departure_agency_id`) REFERENCES `agencies` (`id`) ON DELETE CASCADE ON UPDATE RESTRICT,
-  ADD CONSTRAINT `fk_offers_return_agency_id` FOREIGN KEY (`return_agency_id`) REFERENCES `agencies` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `fk_offers_departure_agency_id` FOREIGN KEY (`departure_agency`) REFERENCES `agencies` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `fk_offers_return_agency_id` FOREIGN KEY (`return_agency`) REFERENCES `agencies` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `fk_offers_vehicle_id` FOREIGN KEY (`vehicle_id`) REFERENCES `vehicles` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Contraintes pour la table `payment_methods`
+--
+ALTER TABLE `payment_methods`
+  ADD CONSTRAINT `fk_paument_methods_user_id` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Contraintes pour la table `reservations`
+--
+ALTER TABLE `reservations`
+  ADD CONSTRAINT `fk_reservations_offer_id` FOREIGN KEY (`offer_id`) REFERENCES `offers` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `fk_reservations_user_id` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Contraintes pour la table `reviews`
@@ -442,11 +578,17 @@ ALTER TABLE `reviews`
   ADD CONSTRAINT `fk_reviews_user_id` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE RESTRICT;
 
 --
+-- Contraintes pour la table `transactions`
+--
+ALTER TABLE `transactions`
+  ADD CONSTRAINT `fk_transactions_payment_method` FOREIGN KEY (`payment_method`) REFERENCES `payment_methods` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `fk_transactions_user_id` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
 -- Contraintes pour la table `vehicles`
 --
 ALTER TABLE `vehicles`
-  ADD CONSTRAINT `fk_vehicle_category` FOREIGN KEY (`category`) REFERENCES `categories` (`code`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `fk_vehicles_agency_id` FOREIGN KEY (`storage agency`) REFERENCES `agencies` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `fk_vehicles_category_code` FOREIGN KEY (`category`) REFERENCES `categories` (`code`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Contraintes pour la table `video_participants`
