@@ -328,6 +328,48 @@
             <mxPoint x="324" y="295" as="targetPoint" />
           </mxGeometry>
         </mxCell>
+        <mxCell id="KvNbmY1U7MJzMV-XdOef-74" value="Use" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="320" y="640" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="KvNbmY1U7MJzMV-XdOef-75" value="Realize" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="130" y="660" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="KvNbmY1U7MJzMV-XdOef-77" value="Carry Out" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="600" y="510" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="KvNbmY1U7MJzMV-XdOef-79" value="Write" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="410" y="140" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="KvNbmY1U7MJzMV-XdOef-81" value="Participate" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="160" y="255" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="KvNbmY1U7MJzMV-XdOef-83" value="Schedule" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="270" y="160" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="KvNbmY1U7MJzMV-XdOef-85" value="Send" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="10" y="480" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="KvNbmY1U7MJzMV-XdOef-87" value="Contain" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="-290" y="340" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="KvNbmY1U7MJzMV-XdOef-88" value="Based On" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="800" y="710" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="KvNbmY1U7MJzMV-XdOef-89" value="Evaluate" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="840" y="150" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="KvNbmY1U7MJzMV-XdOef-92" value="Be at" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="1050" y="350" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="KvNbmY1U7MJzMV-XdOef-93" value="Include" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="1160" y="720" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="KvNbmY1U7MJzMV-XdOef-94" value="Provide" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="1000" y="570" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="KvNbmY1U7MJzMV-XdOef-95" value="Relie On" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="120" y="785" width="60" height="30" as="geometry" />
+        </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
