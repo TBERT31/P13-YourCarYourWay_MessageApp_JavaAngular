@@ -15,7 +15,7 @@
             <mxGeometry x="40" y="50" width="120" height="60" as="geometry" />
           </mxCell>
         </UserObject>
-        <mxCell id="VIl7qetFcdLMGMQmezE--8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;strokeColor=#00CCCC;" edge="1" parent="1" source="VIl7qetFcdLMGMQmezE--3" target="VIl7qetFcdLMGMQmezE--1">
+        <mxCell id="VIl7qetFcdLMGMQmezE--8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;strokeColor=#000000;" edge="1" parent="1" source="VIl7qetFcdLMGMQmezE--3" target="VIl7qetFcdLMGMQmezE--1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="VIl7qetFcdLMGMQmezE--18" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="VIl7qetFcdLMGMQmezE--3" target="VIl7qetFcdLMGMQmezE--12">
@@ -317,7 +317,7 @@
         <mxCell id="VIl7qetFcdLMGMQmezE--126" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;mysqldump&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
           <mxGeometry x="1330" y="570" width="60" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="VIl7qetFcdLMGMQmezE--128" value="AWS S3 (cloud Storage)" style="swimlane;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="VIl7qetFcdLMGMQmezE--128" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;AWS S3 (cloud Storage)&lt;/font&gt;" style="swimlane;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="1410" y="-230" width="170" height="950" as="geometry" />
         </mxCell>
       </root>
