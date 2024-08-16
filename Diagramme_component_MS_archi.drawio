@@ -318,7 +318,7 @@
           <mxGeometry x="1330" y="570" width="60" height="30" as="geometry" />
         </mxCell>
         <mxCell id="VIl7qetFcdLMGMQmezE--128" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;AWS S3 (cloud Storage)&lt;/font&gt;" style="swimlane;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="1410" y="-230" width="170" height="950" as="geometry" />
+          <mxGeometry x="1410" y="-230" width="200" height="950" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
