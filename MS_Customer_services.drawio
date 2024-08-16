@@ -39,10 +39,10 @@
         <mxCell id="_INb4RHrN6DYz6TeiQXN-10" value="updated_at: timestamp" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="_INb4RHrN6DYz6TeiQXN-2" vertex="1">
           <mxGeometry y="240" width="200" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="_INb4RHrN6DYz6TeiQXN-21" value="Customer Services DB" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+        <mxCell id="_INb4RHrN6DYz6TeiQXN-21" value="Customer Services" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
           <mxGeometry x="350" y="370" width="160" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="_INb4RHrN6DYz6TeiQXN-22" value="Users DB" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+        <mxCell id="_INb4RHrN6DYz6TeiQXN-22" value="Users" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
           <mxGeometry x="380" y="320" width="100" height="30" as="geometry" />
         </mxCell>
         <mxCell id="9Ze68ccJl-1V-HPHpi7j-1" value="disscussions" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;direction=east;" parent="1" vertex="1">
