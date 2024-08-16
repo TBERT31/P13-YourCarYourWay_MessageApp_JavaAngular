@@ -211,7 +211,7 @@
         <mxCell id="VIl7qetFcdLMGMQmezE--72" value="" style="shape=datastore;whiteSpace=wrap;html=1;" vertex="1" parent="VIl7qetFcdLMGMQmezE--69">
           <mxGeometry x="70" y="40" width="60" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="VIl7qetFcdLMGMQmezE--73" value="Payments DB" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="VIl7qetFcdLMGMQmezE--69">
+        <mxCell id="VIl7qetFcdLMGMQmezE--73" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;Payments DB&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="VIl7qetFcdLMGMQmezE--69">
           <mxGeometry x="70" y="110" width="60" height="30" as="geometry" />
         </mxCell>
         <mxCell id="VIl7qetFcdLMGMQmezE--79" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;JDBC/SQL&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
@@ -226,7 +226,7 @@
         <mxCell id="VIl7qetFcdLMGMQmezE--82" value="" style="shape=datastore;whiteSpace=wrap;html=1;" vertex="1" parent="VIl7qetFcdLMGMQmezE--81">
           <mxGeometry x="70" y="40" width="60" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="VIl7qetFcdLMGMQmezE--83" value="Users DB" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="VIl7qetFcdLMGMQmezE--81">
+        <mxCell id="VIl7qetFcdLMGMQmezE--83" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;Users DB&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="VIl7qetFcdLMGMQmezE--81">
           <mxGeometry x="70" y="110" width="60" height="30" as="geometry" />
         </mxCell>
         <mxCell id="VIl7qetFcdLMGMQmezE--85" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;JDBC/SQL&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
@@ -241,7 +241,7 @@
         <mxCell id="VIl7qetFcdLMGMQmezE--87" value="" style="shape=datastore;whiteSpace=wrap;html=1;" vertex="1" parent="VIl7qetFcdLMGMQmezE--86">
           <mxGeometry x="70" y="40" width="60" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="VIl7qetFcdLMGMQmezE--88" value="Reservations DB" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="VIl7qetFcdLMGMQmezE--86">
+        <mxCell id="VIl7qetFcdLMGMQmezE--88" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;Reservations DB&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="VIl7qetFcdLMGMQmezE--86">
           <mxGeometry x="70" y="110" width="60" height="30" as="geometry" />
         </mxCell>
         <mxCell id="VIl7qetFcdLMGMQmezE--94" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;JDBC/SQL&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
@@ -256,7 +256,7 @@
         <mxCell id="VIl7qetFcdLMGMQmezE--97" value="" style="shape=datastore;whiteSpace=wrap;html=1;" vertex="1" parent="VIl7qetFcdLMGMQmezE--96">
           <mxGeometry x="70" y="40" width="60" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="VIl7qetFcdLMGMQmezE--98" value="Customer Services DB" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="VIl7qetFcdLMGMQmezE--96">
+        <mxCell id="VIl7qetFcdLMGMQmezE--98" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;Customer Services DB&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="VIl7qetFcdLMGMQmezE--96">
           <mxGeometry x="60" y="110" width="90" height="30" as="geometry" />
         </mxCell>
         <mxCell id="VIl7qetFcdLMGMQmezE--100" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;JDBC/SQL&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
@@ -271,7 +271,7 @@
         <mxCell id="VIl7qetFcdLMGMQmezE--103" value="" style="shape=datastore;whiteSpace=wrap;html=1;" vertex="1" parent="VIl7qetFcdLMGMQmezE--102">
           <mxGeometry x="70" y="40" width="60" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="VIl7qetFcdLMGMQmezE--104" value="Geolocations DB" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="VIl7qetFcdLMGMQmezE--102">
+        <mxCell id="VIl7qetFcdLMGMQmezE--104" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;Geolocations DB&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="VIl7qetFcdLMGMQmezE--102">
           <mxGeometry x="60" y="110" width="90" height="30" as="geometry" />
         </mxCell>
         <mxCell id="VIl7qetFcdLMGMQmezE--106" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;JDBC/SQL&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
