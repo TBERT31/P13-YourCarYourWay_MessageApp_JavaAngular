@@ -277,31 +277,6 @@
         <mxCell id="VIl7qetFcdLMGMQmezE--106" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;JDBC/SQL&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
           <mxGeometry x="1010" y="585" width="60" height="30" as="geometry" />
         </mxCell>
-        <UserObject label="&lt;font style=&quot;font-size: 14px;&quot;&gt;Backup Payments DB&lt;/font&gt;" treeRoot="1" id="VIl7qetFcdLMGMQmezE--109">
-          <mxCell style="whiteSpace=wrap;html=1;align=center;treeFolding=1;treeMoving=1;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;startArrow&quot;:&quot;none&quot;,&quot;endArrow&quot;:&quot;none&quot;};" vertex="1" parent="1">
-            <mxGeometry x="1430" y="-180" width="120" height="60" as="geometry" />
-          </mxCell>
-        </UserObject>
-        <UserObject label="&lt;font style=&quot;font-size: 14px;&quot;&gt;Backup Users DB&lt;/font&gt;" treeRoot="1" id="VIl7qetFcdLMGMQmezE--110">
-          <mxCell style="whiteSpace=wrap;html=1;align=center;treeFolding=1;treeMoving=1;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;startArrow&quot;:&quot;none&quot;,&quot;endArrow&quot;:&quot;none&quot;};" vertex="1" parent="1">
-            <mxGeometry x="1430" y="10" width="120" height="60" as="geometry" />
-          </mxCell>
-        </UserObject>
-        <UserObject label="&lt;font style=&quot;font-size: 14px;&quot;&gt;Backup Reservations DB&lt;/font&gt;" treeRoot="1" id="VIl7qetFcdLMGMQmezE--111">
-          <mxCell style="whiteSpace=wrap;html=1;align=center;treeFolding=1;treeMoving=1;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;startArrow&quot;:&quot;none&quot;,&quot;endArrow&quot;:&quot;none&quot;};" vertex="1" parent="1">
-            <mxGeometry x="1430" y="210" width="120" height="60" as="geometry" />
-          </mxCell>
-        </UserObject>
-        <UserObject label="&lt;font style=&quot;font-size: 14px;&quot;&gt;Backup Customer Services DB&lt;/font&gt;" treeRoot="1" id="VIl7qetFcdLMGMQmezE--112">
-          <mxCell style="whiteSpace=wrap;html=1;align=center;treeFolding=1;treeMoving=1;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;startArrow&quot;:&quot;none&quot;,&quot;endArrow&quot;:&quot;none&quot;};" vertex="1" parent="1">
-            <mxGeometry x="1430" y="390" width="120" height="60" as="geometry" />
-          </mxCell>
-        </UserObject>
-        <UserObject label="&lt;font style=&quot;font-size: 14px;&quot;&gt;Backup Geolocations DB&lt;/font&gt;" treeRoot="1" id="VIl7qetFcdLMGMQmezE--113">
-          <mxCell style="whiteSpace=wrap;html=1;align=center;treeFolding=1;treeMoving=1;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;startArrow&quot;:&quot;none&quot;,&quot;endArrow&quot;:&quot;none&quot;};" vertex="1" parent="1">
-            <mxGeometry x="1430" y="590" width="120" height="60" as="geometry" />
-          </mxCell>
-        </UserObject>
         <mxCell id="VIl7qetFcdLMGMQmezE--121" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;mysqldump&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
           <mxGeometry x="1330" y="-200" width="60" height="30" as="geometry" />
         </mxCell>
@@ -320,6 +295,31 @@
         <mxCell id="VIl7qetFcdLMGMQmezE--128" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;AWS S3 (cloud Storage)&lt;/font&gt;" style="swimlane;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="1410" y="-230" width="200" height="950" as="geometry" />
         </mxCell>
+        <UserObject label="&lt;font style=&quot;font-size: 14px;&quot;&gt;Backup Payments DB&lt;/font&gt;" treeRoot="1" id="VIl7qetFcdLMGMQmezE--109">
+          <mxCell style="whiteSpace=wrap;html=1;align=center;treeFolding=1;treeMoving=1;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;startArrow&quot;:&quot;none&quot;,&quot;endArrow&quot;:&quot;none&quot;};" vertex="1" parent="VIl7qetFcdLMGMQmezE--128">
+            <mxGeometry x="40" y="50" width="120" height="60" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="&lt;font style=&quot;font-size: 14px;&quot;&gt;Backup Users DB&lt;/font&gt;" treeRoot="1" id="VIl7qetFcdLMGMQmezE--110">
+          <mxCell style="whiteSpace=wrap;html=1;align=center;treeFolding=1;treeMoving=1;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;startArrow&quot;:&quot;none&quot;,&quot;endArrow&quot;:&quot;none&quot;};" vertex="1" parent="VIl7qetFcdLMGMQmezE--128">
+            <mxGeometry x="40" y="240" width="120" height="60" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="&lt;font style=&quot;font-size: 14px;&quot;&gt;Backup Reservations DB&lt;/font&gt;" treeRoot="1" id="VIl7qetFcdLMGMQmezE--111">
+          <mxCell style="whiteSpace=wrap;html=1;align=center;treeFolding=1;treeMoving=1;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;startArrow&quot;:&quot;none&quot;,&quot;endArrow&quot;:&quot;none&quot;};" vertex="1" parent="VIl7qetFcdLMGMQmezE--128">
+            <mxGeometry x="40" y="440" width="120" height="60" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="&lt;font style=&quot;font-size: 14px;&quot;&gt;Backup Customer Services DB&lt;/font&gt;" treeRoot="1" id="VIl7qetFcdLMGMQmezE--112">
+          <mxCell style="whiteSpace=wrap;html=1;align=center;treeFolding=1;treeMoving=1;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;startArrow&quot;:&quot;none&quot;,&quot;endArrow&quot;:&quot;none&quot;};" vertex="1" parent="VIl7qetFcdLMGMQmezE--128">
+            <mxGeometry x="40" y="620" width="120" height="60" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="&lt;font style=&quot;font-size: 14px;&quot;&gt;Backup Geolocations DB&lt;/font&gt;" treeRoot="1" id="VIl7qetFcdLMGMQmezE--113">
+          <mxCell style="whiteSpace=wrap;html=1;align=center;treeFolding=1;treeMoving=1;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;startArrow&quot;:&quot;none&quot;,&quot;endArrow&quot;:&quot;none&quot;};" vertex="1" parent="VIl7qetFcdLMGMQmezE--128">
+            <mxGeometry x="40" y="820" width="120" height="60" as="geometry" />
+          </mxCell>
+        </UserObject>
       </root>
     </mxGraphModel>
   </diagram>
