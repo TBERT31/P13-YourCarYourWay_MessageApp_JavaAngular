@@ -7,10 +7,10 @@
         <mxCell id="VIl7qetFcdLMGMQmezE--7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="VIl7qetFcdLMGMQmezE--1" target="VIl7qetFcdLMGMQmezE--3">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="VIl7qetFcdLMGMQmezE--1" value="NGINX server : port 80:443" style="swimlane;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="VIl7qetFcdLMGMQmezE--1" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;NGINX server : port 80:443&lt;/font&gt;" style="swimlane;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="30" y="170" width="200" height="140" as="geometry" />
         </mxCell>
-        <UserObject label="Fontend Angular" treeRoot="1" id="VIl7qetFcdLMGMQmezE--2">
+        <UserObject label="&lt;font style=&quot;font-size: 14px;&quot;&gt;Fontend Angular&lt;/font&gt;" treeRoot="1" id="VIl7qetFcdLMGMQmezE--2">
           <mxCell style="whiteSpace=wrap;html=1;align=center;treeFolding=1;treeMoving=1;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;startArrow&quot;:&quot;none&quot;,&quot;endArrow&quot;:&quot;none&quot;};" vertex="1" parent="VIl7qetFcdLMGMQmezE--1">
             <mxGeometry x="40" y="50" width="120" height="60" as="geometry" />
           </mxCell>
@@ -33,10 +33,10 @@
         <mxCell id="VIl7qetFcdLMGMQmezE--22" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="VIl7qetFcdLMGMQmezE--3" target="VIl7qetFcdLMGMQmezE--16">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="VIl7qetFcdLMGMQmezE--3" value="openjdk17 - port 8443:80" style="swimlane;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="VIl7qetFcdLMGMQmezE--3" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;openjdk:17 - port 8443:80&lt;/font&gt;" style="swimlane;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="350" y="170" width="200" height="140" as="geometry" />
         </mxCell>
-        <UserObject label="Spring Cloud Gateway" treeRoot="1" id="VIl7qetFcdLMGMQmezE--4">
+        <UserObject label="&lt;font style=&quot;font-size: 14px;&quot;&gt;Spring Cloud Gateway&lt;/font&gt;" treeRoot="1" id="VIl7qetFcdLMGMQmezE--4">
           <mxCell style="whiteSpace=wrap;html=1;align=center;treeFolding=1;treeMoving=1;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;startArrow&quot;:&quot;none&quot;,&quot;endArrow&quot;:&quot;none&quot;};" vertex="1" parent="VIl7qetFcdLMGMQmezE--3">
             <mxGeometry x="40" y="50" width="120" height="60" as="geometry" />
           </mxCell>
@@ -57,24 +57,30 @@
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="VIl7qetFcdLMGMQmezE--5" value="openjdk17 - port 8081:80" style="swimlane;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="VIl7qetFcdLMGMQmezE--84" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="VIl7qetFcdLMGMQmezE--5" target="VIl7qetFcdLMGMQmezE--81">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="VIl7qetFcdLMGMQmezE--5" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;openjdk:17 - port 8081:80&lt;/font&gt;" style="swimlane;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="650" y="-30" width="200" height="140" as="geometry" />
         </mxCell>
-        <UserObject label="Users Microservice" treeRoot="1" id="VIl7qetFcdLMGMQmezE--6">
+        <UserObject label="&lt;font style=&quot;font-size: 14px;&quot;&gt;Users Microservice&lt;/font&gt;" treeRoot="1" id="VIl7qetFcdLMGMQmezE--6">
           <mxCell style="whiteSpace=wrap;html=1;align=center;treeFolding=1;treeMoving=1;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;startArrow&quot;:&quot;none&quot;,&quot;endArrow&quot;:&quot;none&quot;};" vertex="1" parent="VIl7qetFcdLMGMQmezE--5">
             <mxGeometry x="40" y="50" width="120" height="60" as="geometry" />
           </mxCell>
         </UserObject>
-        <mxCell id="VIl7qetFcdLMGMQmezE--9" value="HTTPS/Json" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+        <mxCell id="VIl7qetFcdLMGMQmezE--9" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;HTTPS/Json&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
           <mxGeometry x="260" y="200" width="60" height="30" as="geometry" />
         </mxCell>
         <mxCell id="VIl7qetFcdLMGMQmezE--43" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="VIl7qetFcdLMGMQmezE--10" target="VIl7qetFcdLMGMQmezE--5">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="VIl7qetFcdLMGMQmezE--10" value="openjdk17 - port 8082:80" style="swimlane;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="VIl7qetFcdLMGMQmezE--74" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="VIl7qetFcdLMGMQmezE--10" target="VIl7qetFcdLMGMQmezE--69">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="VIl7qetFcdLMGMQmezE--10" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;openjdk:17 - port 8082:80&lt;/font&gt;" style="swimlane;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="650" y="-220" width="200" height="140" as="geometry" />
         </mxCell>
-        <UserObject label="Payment Microservice" treeRoot="1" id="VIl7qetFcdLMGMQmezE--11">
+        <UserObject label="&lt;font style=&quot;font-size: 14px;&quot;&gt;Payment Microservice&lt;/font&gt;" treeRoot="1" id="VIl7qetFcdLMGMQmezE--11">
           <mxCell style="whiteSpace=wrap;html=1;align=center;treeFolding=1;treeMoving=1;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;startArrow&quot;:&quot;none&quot;,&quot;endArrow&quot;:&quot;none&quot;};" vertex="1" parent="VIl7qetFcdLMGMQmezE--10">
             <mxGeometry x="40" y="50" width="120" height="60" as="geometry" />
           </mxCell>
@@ -90,10 +96,13 @@
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="VIl7qetFcdLMGMQmezE--12" value="openjdk17 - port 8083:80" style="swimlane;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="VIl7qetFcdLMGMQmezE--89" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="VIl7qetFcdLMGMQmezE--12" target="VIl7qetFcdLMGMQmezE--86">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="VIl7qetFcdLMGMQmezE--12" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;openjdk:17 - port 8083:80&lt;/font&gt;" style="swimlane;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="650" y="170" width="200" height="140" as="geometry" />
         </mxCell>
-        <UserObject label="Reservations Microservice" treeRoot="1" id="VIl7qetFcdLMGMQmezE--13">
+        <UserObject label="&lt;font style=&quot;font-size: 14px;&quot;&gt;Reservations Microservice&lt;/font&gt;" treeRoot="1" id="VIl7qetFcdLMGMQmezE--13">
           <mxCell style="whiteSpace=wrap;html=1;align=center;treeFolding=1;treeMoving=1;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;startArrow&quot;:&quot;none&quot;,&quot;endArrow&quot;:&quot;none&quot;};" vertex="1" parent="VIl7qetFcdLMGMQmezE--12">
             <mxGeometry x="40" y="50" width="120" height="60" as="geometry" />
           </mxCell>
@@ -109,10 +118,13 @@
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="VIl7qetFcdLMGMQmezE--14" value="openjdk17 - port 8084:80" style="swimlane;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="VIl7qetFcdLMGMQmezE--99" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="VIl7qetFcdLMGMQmezE--14" target="VIl7qetFcdLMGMQmezE--96">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="VIl7qetFcdLMGMQmezE--14" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;openjdk:17 - port 8084:80&lt;/font&gt;" style="swimlane;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="650" y="350" width="200" height="140" as="geometry" />
         </mxCell>
-        <UserObject label="Customer Service Microservice" treeRoot="1" id="VIl7qetFcdLMGMQmezE--15">
+        <UserObject label="&lt;font style=&quot;font-size: 14px;&quot;&gt;Customer Service Microservice&lt;/font&gt;" treeRoot="1" id="VIl7qetFcdLMGMQmezE--15">
           <mxCell style="whiteSpace=wrap;html=1;align=center;treeFolding=1;treeMoving=1;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;startArrow&quot;:&quot;none&quot;,&quot;endArrow&quot;:&quot;none&quot;};" vertex="1" parent="VIl7qetFcdLMGMQmezE--14">
             <mxGeometry x="40" y="50" width="120" height="60" as="geometry" />
           </mxCell>
@@ -128,10 +140,13 @@
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="VIl7qetFcdLMGMQmezE--16" value="openjdk17 - port 8085:80" style="swimlane;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="VIl7qetFcdLMGMQmezE--105" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="VIl7qetFcdLMGMQmezE--16" target="VIl7qetFcdLMGMQmezE--102">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="VIl7qetFcdLMGMQmezE--16" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;openjdk:17 - port 8085:80&lt;/font&gt;" style="swimlane;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="650" y="550" width="200" height="140" as="geometry" />
         </mxCell>
-        <UserObject label="Geolactions Microservice" treeRoot="1" id="VIl7qetFcdLMGMQmezE--17">
+        <UserObject label="&lt;font style=&quot;font-size: 14px;&quot;&gt;Geolactions Microservice&lt;/font&gt;" treeRoot="1" id="VIl7qetFcdLMGMQmezE--17">
           <mxCell style="whiteSpace=wrap;html=1;align=center;treeFolding=1;treeMoving=1;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;startArrow&quot;:&quot;none&quot;,&quot;endArrow&quot;:&quot;none&quot;};" vertex="1" parent="VIl7qetFcdLMGMQmezE--16">
             <mxGeometry x="40" y="50" width="120" height="60" as="geometry" />
           </mxCell>
@@ -139,23 +154,23 @@
         <mxCell id="VIl7qetFcdLMGMQmezE--34" style="edgeStyle=elbowEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;startArrow=none;endArrow=none;entryX=0;entryY=0.25;entryDx=0;entryDy=0;" edge="1" parent="1" source="VIl7qetFcdLMGMQmezE--29" target="VIl7qetFcdLMGMQmezE--10">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <UserObject label="STRIPE / PAYPAL (third-party service)" treeRoot="1" id="VIl7qetFcdLMGMQmezE--29">
+        <UserObject label="&lt;font style=&quot;font-size: 14px;&quot;&gt;STRIPE / PAYPAL (third-party service)&lt;/font&gt;" treeRoot="1" id="VIl7qetFcdLMGMQmezE--29">
           <mxCell style="whiteSpace=wrap;html=1;align=center;treeFolding=1;treeMoving=1;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;startArrow&quot;:&quot;none&quot;,&quot;endArrow&quot;:&quot;none&quot;};" vertex="1" parent="1">
             <mxGeometry x="293" y="-190" width="120" height="60" as="geometry" />
           </mxCell>
         </UserObject>
-        <mxCell id="VIl7qetFcdLMGMQmezE--31" value="HTTPS/Json" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+        <mxCell id="VIl7qetFcdLMGMQmezE--31" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;HTTPS/Json&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
           <mxGeometry x="490" y="-230" width="60" height="30" as="geometry" />
         </mxCell>
         <mxCell id="VIl7qetFcdLMGMQmezE--36" style="edgeStyle=elbowEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;startArrow=none;endArrow=none;entryX=0;entryY=0.25;entryDx=0;entryDy=0;" edge="1" parent="1" source="VIl7qetFcdLMGMQmezE--35" target="VIl7qetFcdLMGMQmezE--5">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <UserObject label="OAuth2 (third-party services)" treeRoot="1" id="VIl7qetFcdLMGMQmezE--35">
+        <UserObject label="&lt;font style=&quot;font-size: 14px;&quot;&gt;OAuth2 (third-party services)&lt;/font&gt;" treeRoot="1" id="VIl7qetFcdLMGMQmezE--35">
           <mxCell style="whiteSpace=wrap;html=1;align=center;treeFolding=1;treeMoving=1;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;startArrow&quot;:&quot;none&quot;,&quot;endArrow&quot;:&quot;none&quot;};" vertex="1" parent="1">
             <mxGeometry x="293" y="-30" width="120" height="60" as="geometry" />
           </mxCell>
         </UserObject>
-        <mxCell id="VIl7qetFcdLMGMQmezE--37" value="HTTPS/Json" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+        <mxCell id="VIl7qetFcdLMGMQmezE--37" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;HTTPS/Json&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
           <mxGeometry x="490" y="-40" width="60" height="30" as="geometry" />
         </mxCell>
         <mxCell id="VIl7qetFcdLMGMQmezE--40" style="edgeStyle=elbowEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;startArrow=none;endArrow=none;entryX=0;entryY=0.25;entryDx=0;entryDy=0;" edge="1" parent="1" source="VIl7qetFcdLMGMQmezE--39" target="VIl7qetFcdLMGMQmezE--16">
@@ -166,7 +181,7 @@
             <mxGeometry x="300" y="550" width="120" height="60" as="geometry" />
           </mxCell>
         </UserObject>
-        <mxCell id="VIl7qetFcdLMGMQmezE--41" value="HTTPS/Json" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+        <mxCell id="VIl7qetFcdLMGMQmezE--41" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;HTTPS/Json&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
           <mxGeometry x="490" y="540" width="60" height="30" as="geometry" />
         </mxCell>
         <mxCell id="VIl7qetFcdLMGMQmezE--45" value="API RESTful" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
@@ -183,6 +198,69 @@
         </mxCell>
         <mxCell id="VIl7qetFcdLMGMQmezE--64" value="API RESTful" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
           <mxGeometry x="950" y="120" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="VIl7qetFcdLMGMQmezE--75" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="VIl7qetFcdLMGMQmezE--69" target="VIl7qetFcdLMGMQmezE--10">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="VIl7qetFcdLMGMQmezE--69" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;mysql:8.0 - port 3306:3306&lt;/font&gt;" style="swimlane;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1090" y="-220" width="200" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="VIl7qetFcdLMGMQmezE--72" value="" style="shape=datastore;whiteSpace=wrap;html=1;" vertex="1" parent="VIl7qetFcdLMGMQmezE--69">
+          <mxGeometry x="70" y="40" width="60" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="VIl7qetFcdLMGMQmezE--73" value="Payments DB" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="VIl7qetFcdLMGMQmezE--69">
+          <mxGeometry x="70" y="110" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="VIl7qetFcdLMGMQmezE--79" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;JDBC/SQL&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="1010" y="-200" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="VIl7qetFcdLMGMQmezE--81" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;mysql:8.0 - port 3306:3306&lt;/font&gt;" style="swimlane;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1090" y="-30" width="200" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="VIl7qetFcdLMGMQmezE--82" value="" style="shape=datastore;whiteSpace=wrap;html=1;" vertex="1" parent="VIl7qetFcdLMGMQmezE--81">
+          <mxGeometry x="70" y="40" width="60" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="VIl7qetFcdLMGMQmezE--83" value="Users DB" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="VIl7qetFcdLMGMQmezE--81">
+          <mxGeometry x="70" y="110" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="VIl7qetFcdLMGMQmezE--85" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;JDBC/SQL&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="1010" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="VIl7qetFcdLMGMQmezE--86" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;mysql:8.0 - port 3306:3306&lt;/font&gt;" style="swimlane;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1080" y="170" width="210" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="VIl7qetFcdLMGMQmezE--87" value="" style="shape=datastore;whiteSpace=wrap;html=1;" vertex="1" parent="VIl7qetFcdLMGMQmezE--86">
+          <mxGeometry x="70" y="40" width="60" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="VIl7qetFcdLMGMQmezE--88" value="Reservations DB" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="VIl7qetFcdLMGMQmezE--86">
+          <mxGeometry x="70" y="110" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="VIl7qetFcdLMGMQmezE--94" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;JDBC/SQL&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="1010" y="200" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="VIl7qetFcdLMGMQmezE--96" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;mysql:8.0 - port 3306:3306&lt;/font&gt;" style="swimlane;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1080" y="350" width="210" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="VIl7qetFcdLMGMQmezE--97" value="" style="shape=datastore;whiteSpace=wrap;html=1;" vertex="1" parent="VIl7qetFcdLMGMQmezE--96">
+          <mxGeometry x="70" y="40" width="60" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="VIl7qetFcdLMGMQmezE--98" value="Customer Services DB" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="VIl7qetFcdLMGMQmezE--96">
+          <mxGeometry x="60" y="110" width="90" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="VIl7qetFcdLMGMQmezE--100" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;JDBC/SQL&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="1010" y="380" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="VIl7qetFcdLMGMQmezE--102" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;mysql:8.0 - port 3306:3306&lt;/font&gt;" style="swimlane;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1080" y="550" width="210" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="VIl7qetFcdLMGMQmezE--103" value="" style="shape=datastore;whiteSpace=wrap;html=1;" vertex="1" parent="VIl7qetFcdLMGMQmezE--102">
+          <mxGeometry x="70" y="40" width="60" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="VIl7qetFcdLMGMQmezE--104" value="Geolocations DB" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="VIl7qetFcdLMGMQmezE--102">
+          <mxGeometry x="60" y="110" width="90" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="VIl7qetFcdLMGMQmezE--106" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;JDBC/SQL&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="1010" y="585" width="60" height="30" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
